@@ -5,8 +5,6 @@
     font-family: var(--font);
     list-style: none;
     text-decoration: none !important;
-    padding: 0;
-    margin: 0;
 }
 
 body {
@@ -16,13 +14,12 @@ body {
 .navbar {
     position: absolute;
     margin: 1.4em;
-    margin-top: 4vh;
     display: flex;
     justify-content: space-between;
-    align-items: left;
-    width: 93%;
-    box-sizing: border-box;
+    align-items: center;
+    width: 90%;
     font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
 }
 
 .navbar a {
@@ -34,7 +31,7 @@ body {
 
 .navbar a:hover {
     /*Efecto de raya bajo y sombreado por encima*/
-    border-bottom: 2px solid white;
+    color: wheat;
 }
 
 .navbar .logo {
@@ -85,28 +82,17 @@ img {
 
 
 .font-weight {
-    width: -9%;
     font-weight: bold;
     text-align: left;
     font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell var(--1er-color);
     margin-left: 12vh;
-
-}
-
-.tp {
-    /*Terapia de pareja (Título)*/
-    margin-left: 10vh;
-}
-
-.ti {
-    margin-left: -90vh;
 }
 
 .subtitlecard {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 3vh;
+ margin: auto;
     border-radius: 13px 103px 10px 10px;
     padding: 30px 90px 0px 50px;
     font-weight: lighter;
@@ -114,14 +100,12 @@ img {
 }
 
 .parejas {
-    width: 45%;
+    width: 30%;
 
 }
 
 /**** Imagen de fondo primera página ***/
 .bannerservices {
-    padding: 0;
-    margin: 0;
     background-image: url(https://i.ibb.co/tKChtjP/Servicios.png);
     background-size: cover;
     background-color: #055f5e51;
@@ -176,19 +160,6 @@ img {
 
 }
 
-@keyframes glowing {
-    0% {
-        background-position: 0 0;
-    }
-
-    50% {
-        background-position: 400% 0;
-    }
-
-    100% {
-        background-position: 0 0;
-    }
-}
 
 .bannerservices h1 {
     text-align: left;
@@ -197,13 +168,13 @@ img {
     margin-left: 25vh;
     margin-top: -28vh;
 }
-
-p {
-    display: block;
-    color: aliceblue;
-    text-align: center;
+.botonbannerservices{
+    margin-top: -400px;
 }
 
+p{
+    font-weight: bold;
+}
 .icons {
     z-index: 2;
     position: absolute;
@@ -231,6 +202,16 @@ p {
 }
 
 /********/
+.groupcardtepi{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+
 
 /*Botón agenda tu cita*/
 .buttonservices {
@@ -243,9 +224,7 @@ p {
     box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
     border-radius: 50px;
     transition: 1000ms;
-    transform: translateY(30);
     cursor: pointer;
-    margin: 9vh 80vh 10vh 12vh;
     width: 240px;
 }
 
@@ -260,21 +239,26 @@ p {
 
 }
 
+.containerind .buttonservicesind{
+margin-left: 180px;
+    margin-top: 50px;
+}
+
 /*************/
 
 /*Evaluacion Psicologica*/
 .containerevalpsi {
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    font-size: 3.2;
+    justify-content: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width: 90%;
     margin-top: 30vh;
     margin-bottom: 2vh;
     margin-left: 13vh;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
+
 }
 
 .containertexteval {
@@ -297,8 +281,7 @@ p {
     transition: all 0.40 ease;
     width: 10em;
     flex-direction: row;
-    margin-left: 130vh;
-    margin-top: -7vh;
+    margin-top: -22vh;
     margin-bottom: 7vh;
 }
 
@@ -310,7 +293,6 @@ p {
 
 .prueba::before {
     content: "";
-    position: absolute;
     left: 0;
     top: 0;
     z-index: -1;
@@ -324,25 +306,12 @@ p {
 
 }
 
-@keyframes glowing {
-    0% {
-        background-position: 0 0;
-    }
-
-    50% {
-        background-position: 400% 0;
-    }
-
-    100% {
-        background-position: 0 0;
-    }
-}
 
 .titleevalpsi {
     /*Evaluacón psicológica*/
     width: 89%;
     margin-top: 40vh;
-    margin-left: -13vh;
+    margin-left: -100vh;
     text-align: right;
     margin-bottom: 1px;
     font-weight: bolder;
@@ -360,7 +329,7 @@ p {
 .imgevalpsi img {
     width: 500px;
     padding: 4px;
-    margin-top: -19vh;
+
 }
 
 .textevalpsi {
@@ -377,8 +346,15 @@ p {
 }
 
 /*Terapia Individual*/
+.containerserviceti{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
 .containerind {
-    margin-left: 2vh;
+
     margin-top: 100px;
     margin-bottom: 10vh;
     font-size: 4vh;
@@ -389,22 +365,22 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.containerservicetileft{
+    width: 60%;
 }
 
 .img2 {
-    flex-direction: row;
-    position: absolute;
-    left: 90vh;
-    margin-top: -50vh;
-    width: 653px;
+    width: 450px;
 }
 
 .sueltas {
     color: #0c2839;
     font-size: 9vh;
-    margin-left: -55vh;
-    margin-top: 5vh;
-    margin-bottom: 20vh;
+    margin-top: 80px;
+
 }
 
 .enfoques {
@@ -412,8 +388,9 @@ p {
     width: 95%;
     font-size: smaller;
     font-weight: lighter;
-    margin-top: -20vh;
+
     margin-bottom: 9vh;
+    text-align: center;
 }
 
 .cardtepi {
@@ -428,14 +405,15 @@ p {
 }
 
 .onecardtepi {
-    width: auto;
+    width: 400px;
     height: 400px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
     border-radius: 20px;
     text-align: justify;
+
 }
 
 .onecardtepi:hover {
@@ -461,18 +439,16 @@ p {
 /*Terapia Pareja*/
 .containertepa {
     width: 90%;
-    margin-left: 40px;
-    margin-top: 7vh;
+    margin: auto;
     font-weight: bolder;
     font-size: 4vh;
     color: #072e33;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-flex-wrap: wrap;
+    flex-direction: row;
 
-.onecardtepa {
+/*.onecardtepa {
     width: auto;
     height: 350px;
     display: flex;
@@ -498,9 +474,9 @@ flex-wrap: wrap;
 .onecardtepa h5 {
     text-align: center;
     font-weight: bold;
-}
+}*/
 
-.cardtepa {
+/*.cardtepa {
     display: flex;
     margin-bottom: 40px;
     margin-top: 10px;
@@ -512,6 +488,10 @@ flex-wrap: wrap;
 /*************/
 
 /*Terapia Infantil*/
+    .row{
+    justify-content: center;
+    flex-wrap: wrap}
+}
 .containerteinf {
     margin-left: 2vh;
     margin-top: -9vh;
@@ -536,6 +516,14 @@ flex-wrap: wrap;
 justify-content: center;
 align-items: center;
 }
+    .parrainf{
+        width: 70%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+    }
+}
 
 .top {
     color: #05161a;
@@ -543,10 +531,10 @@ align-items: center;
 }
 
 .parra {
-    width: 70%;
+    width: 60%;
     font-weight: lighter;
     text-align: center;
-    margin-left: 37vh;
+
 }
 
 .button {
@@ -751,12 +739,8 @@ align-items: center;
     }
     /*Evaluacón psicológica Responsive*/
     .titleevalpsi {
-        
-        width: -3%;
-        margin-top: 1px;
-        margin-left:8px;
+  margin: auto;
         text-align: center;
-        margin-bottom: 1px;
         font-weight: bolder;
         font-size: 10vh;
         color: #072e33;
