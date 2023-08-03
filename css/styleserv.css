@@ -48,6 +48,7 @@ body {
 .navbar .nav-links ul {
     display: flex;
     margin-top: 1em;
+    align-items: center;
 }
 
 .navbar .nav-links ul li {

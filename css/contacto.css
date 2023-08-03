@@ -45,7 +45,7 @@ main {
 
 /* Estilos personalizados para el contenedor izquierdo dentro de contactMain */
 #leftContainer {
-  background-image: url('img/contacto/Contac.png');
+  background-image: url('img/contacto/Contac.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
