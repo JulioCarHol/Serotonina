@@ -1,0 +1,13 @@
+<component name="CopyrightManager">
+  <settings>
+    <LanguageOptions name="CSS">
+      <option name="fileTypeOverride" value="1" />
+    </LanguageOptions>
+    <LanguageOptions name="PostCSS">
+      <option name="fileTypeOverride" value="1" />
+    </LanguageOptions>
+    <LanguageOptions name="SCSS">
+      <option name="fileTypeOverride" value="1" />
+    </LanguageOptions>
+  </settings>
+</component>
