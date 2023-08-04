@@ -438,17 +438,28 @@ display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    margin-bottom: 50px;
 }
 
 .containertepaboton {
-    margin-left: 190px;
-    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .titletepa {
-    margin-left: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Segoe UI", Roboto, Oxygen, Ubuntu,var(--1er-color) Cantarell ;
 }
 
+.boxuptepa{
+    display: flex;
+    flex-direction: column;
+justify-content: center}
 
 
 /*
@@ -511,16 +522,21 @@ display: flex;
 
 .ti {
     font-size: 10vh;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Segoe UI", Roboto, Oxygen, Ubuntu,var(--1er-color) Cantarell ;
 }
 
+
 .titleteinf {
-    background: url(https://i.ibb.co/SR1b5YW/Naranja-Negocios-Servicios-Sitio-Web-1.png) no-repeat;
-    background-size: cover;
+    background-image: url("img/servicios/banner-tepain.jpg");
     color: white;
     padding: 10vh;
     font-weight: bolder;
     justify-content: center;
     align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .parrainf {
@@ -528,7 +544,7 @@ display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: auto;
+    margin: 40px auto;
     display: flex;
     justify-content: center;
     }
@@ -612,6 +628,12 @@ display: flex;
     margin-top: 10px;
     width: calc(90% / 3);
     justify-content: center;
+}
+
+
+/**Contador**/
+.contador{
+margin: 100px auto;
 }
 
 /*************/
