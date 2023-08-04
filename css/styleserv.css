@@ -2,9 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
 /* title body: font-family: 'Mochiy Pop P One', sans-serif;*/
-:root{
+:root {
     --font-body: 'Mochiy Pop P One', sans-serif;
 }
+
 * {
     font-family: var(--font);
     list-style: none;
@@ -95,7 +96,6 @@ menuIcon {
     justify-content: center;
     margin: auto;
     border-radius: 13px 103px 10px 10px;
-    padding: 30px 90px 0px 50px;
     font-weight: lighter;
     text-align: center;
     width: 80%;
@@ -104,7 +104,7 @@ menuIcon {
 }
 
 .parejas {
-    width: 60%;
+    width: 80%;
 }
 
 /**** Imagen de fondo primera página ***/
@@ -133,7 +133,7 @@ menuIcon {
     border-radius: 42px;
     font-weight: 800;
     position: relative;
-    transition: all 0.40 ease;
+    transition: all 0.4ms ease;
     width: 9em;
     display: flex;
     z-index: 2;
@@ -166,14 +166,16 @@ menuIcon {
 
 
 .bannerservices h1 {
-    text-align: left;
+    text-align: center;
     color: rgb(255, 255, 255);
     width: 550px;
     margin-left: 25vh;
     margin-top: -28vh;
 }
-.botonbannerservices{
-    margin-top: -400px;
+
+.botonbannerservices {
+    margin-top: 50px;
+    margin-left: -370px;
 }
 
 .icons {
@@ -203,15 +205,15 @@ menuIcon {
 }
 
 /********/
-.groupcardtepi{
+.groupcardtepi {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: auto;
-}
+    margin: 80px auto;
 
+}
 
 
 /*Botón agenda tu cita*/
@@ -240,8 +242,8 @@ menuIcon {
 
 }
 
-.containerind .buttonservicesind{
-display: flex;
+.containerind .buttonservicesind {
+    display: flex;
     text-align: center;
     justify-content: center;
 }
@@ -259,7 +261,7 @@ display: flex;
     font-size: 1em;
     border-radius: 42px;
     font-weight: 600;
-    transition: all 0.40 ease;
+    transition: all 0.40ms ease;
     width: 15em;
 
 
@@ -311,6 +313,7 @@ display: flex;
     font-weight: lighter;
     margin: 40px 0px;
 }
+
 .containerevalpsi {
     display: flex;
     flex-direction: row;
@@ -322,7 +325,8 @@ display: flex;
     align-items: center;
 
 }
-.containertexteval{
+
+.containertexteval {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -332,16 +336,15 @@ display: flex;
 
 
 /*Terapia Individual*/
-.containerserviceti{
+.containerservicetein {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin:auto;
-    margin-top: 100px;
+    margin: 50px auto;
 }
-.containerind {
 
+.containerind {
     margin-top: 100px;
     margin-bottom: 10vh;
     font-size: 4vh;
@@ -349,24 +352,20 @@ display: flex;
     color: #072e33;
     width: 80%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     margin: auto;
-}
-.containerservicetileft{
-    width: 60%;
+    flex-wrap: nowrap;
 }
 
 .img2 {
-    width: 450px;
+    width: 70%;
 }
 
 .sueltas {
     color: #0c2839;
     font-size: 9vh;
-    margin-top: 80px;
 
 }
 
@@ -377,6 +376,7 @@ display: flex;
     font-weight: lighter;
     margin-bottom: 9vh;
     text-align: center;
+    font-size: 30px;
 }
 
 .cardtepi {
@@ -398,7 +398,7 @@ display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 20px;
-    text-align: justify;
+    text-align: center;
 
 }
 
@@ -422,15 +422,15 @@ display: flex;
     font-weight: bold;
 }
 
-.onecardtepi .tcc{
+.onecardtepi .tcc {
     color: black;
     font-size: 15px;
     font-family: 'Font Awesome 6 Solid', sans-serif;
 }
+
 /*Terapia Pareja*/
 .containertepa {
-    width: 90%;
-    margin: auto;
+    margin: 100px auto;
     font-weight: bolder;
     font-size: 4vh;
     color: #072e33;
@@ -439,6 +439,7 @@ display: flex;
     align-items: center;
     flex-direction: row;
     margin-bottom: 50px;
+    width: 80%;
 }
 
 .containertepaboton {
@@ -453,13 +454,14 @@ display: flex;
     align-items: center;
     font-weight: bold;
     text-align: center;
-    font-family: "Segoe UI", Roboto, Oxygen, Ubuntu,var(--1er-color) Cantarell ;
+    font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, var(--1er-color) Cantarell;
 }
 
-.boxuptepa{
+.boxuptepa {
     display: flex;
     flex-direction: column;
-justify-content: center}
+    justify-content: center
+}
 
 
 /*
@@ -504,14 +506,12 @@ justify-content: center}
 
 
 /*Terapia Infantil*/
-    .row{
+.row {
     justify-content: center;
-        flex-wrap: wrap
-    }
+    flex-wrap: wrap
+}
 
 .containerteinf {
-    margin-left: 2vh;
-    margin-top: -9vh;
     font-size: 4vh;
     color: #012d2dfc;
     text-align: center;
@@ -524,19 +524,21 @@ justify-content: center}
     font-size: 10vh;
     font-weight: bold;
     text-align: center;
-    font-family: "Segoe UI", Roboto, Oxygen, Ubuntu,var(--1er-color) Cantarell ;
+    font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, var(--1er-color) Cantarell;
 }
 
 
 .titleteinf {
-    background-image: url("img/servicios/banner-tepain.jpg");
-    color: white;
-    padding: 10vh;
+    background-image: url(https://i.imgur.com/djqL5jE.jpg);
+    background-size: cover;
+    color: black;
     font-weight: bolder;
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
     flex-direction: column;
+    opacity: 0.8;
+    width: 100%;
 }
 
 .parrainf {
@@ -546,8 +548,10 @@ justify-content: center}
     text-align: center;
     margin: 40px auto;
     display: flex;
-    justify-content: center;
-    }
+    justify-content: center;;
+    font-weight: 600;
+    color: black;;
+}
 
 
 .top {
@@ -555,11 +559,9 @@ justify-content: center}
     margin-top: 0vh;
 }
 
-.parrainf {
-    width: 60%;
-    font-weight: lighter;
-    text-align: center;
 
+.tepainboton {
+    margin-bottom: 20px;
 }
 
 .button {
@@ -572,7 +574,6 @@ justify-content: center}
     box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
     border-radius: 50px;
     transition: 1000ms;
-    transform: translateY(30);
     cursor: pointer;
     margin: 10vh -5vh 14vh 12vh;
 }
@@ -591,16 +592,12 @@ justify-content: center}
     width: 100%;
     height: 290px;
     color: #072e33;
-    background-color: transparent;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    border-radius: 10px;
     text-align: center;
-    border-color: 2px solid #db8d5100;
     margin: auto;
-    margin-top: 40px;
 }
 
 .onecardteinf:hover {
@@ -632,8 +629,8 @@ justify-content: center}
 
 
 /**Contador**/
-.contador{
-margin: 100px auto;
+.contador {
+    margin: 100px auto;
 }
 
 /*************/
@@ -661,58 +658,63 @@ margin: 100px auto;
     font-weight: bolder;
 }
 
-@media screen and (max-width:750px) {
+
+
+
+
+@media screen and (max-width: 750px) {
     .bannerservices h1 {
-        text-align:center;
+        text-align: center;
         font-size: 2px;
         color: rgb(255, 255, 255);
         width: 250px;
-       height: auto;
-       
+        height: auto;
+
     }
+
     /* Botón responsive*/
-.boton {
-    
-    color: rgb(241, 236, 236);
-    background-color: #f563bbc0;
-    border: none;
-    padding: 0.8em 1em;
-    line-height: 1;
-    font-size: 1.3em;
-    border-radius: 42px;
-    font-weight: 800;
-    position:absolute;
-    transition: all 0.40 ease;
-    width: 10em;
-    display:flex;
-    z-index: 2;
-    margin-left: 28vh;
-    margin-top: -45vh;
-    margin-bottom: 5vh;
-}
+    .boton {
 
-.boton:hover {
-    background: rgba(255, 98, 174, 0.948);
-    border: 3px solid;
-    transform: translate(18px);
-    position: relative;
-}
+        color: rgb(241, 236, 236);
+        background-color: #f563bbc0;
+        border: none;
+        padding: 0.8em 1em;
+        line-height: 1;
+        font-size: 1.3em;
+        border-radius: 42px;
+        font-weight: 800;
+        position: absolute;
+        transition: all 0.40ms ease;
+        width: 10em;
+        display: flex;
+        z-index: 2;
+        margin-left: 28vh;
+        margin-top: -45vh;
+        margin-bottom: 5vh;
+    }
 
-.boton::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(240, 194, 222, 0.903), rgb(232, 108, 147));
-    background-size: 800%;
-    border-radius: 10px;
-    filter: blur(8px);
-    animation: glowing 20s linear infinite;
+    .boton:hover {
+        background: rgba(255, 98, 174, 0.948);
+        border: 3px solid;
+        transform: translate(18px);
+        position: relative;
+    }
 
-}
+    .boton::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, rgba(240, 194, 222, 0.903), rgb(232, 108, 147));
+        background-size: 800%;
+        border-radius: 10px;
+        filter: blur(8px);
+        animation: glowing 20s linear infinite;
+
+    }
 
 
     .navbar {
@@ -724,7 +726,7 @@ margin: 100px auto;
         position: fixed;
         left: 1em;
         margin-top: 50px;
-		margin-left: 21px;
+        margin-left: 21px;
     }
 
 
@@ -732,7 +734,7 @@ margin: 100px auto;
         margin-top: 60vh;
         display: block;
         z-index: 12;
-        
+
     }
 
     .nav-links {
@@ -743,7 +745,7 @@ margin: 100px auto;
         backdrop-filter: blur(10px);
         width: 40%;
         height: 100vh;
-        display:flex;
+        display: flex;
         justify-content: center;
         align-items: center;
         margin-left: 67%;
@@ -759,32 +761,36 @@ margin: 100px auto;
     .nav-links ul {
         display: flex;
         flex-direction: column;
-        align-items: right;
+        align-items: center;
     }
 
     .navbar .nav-links ul li {
         margin: 25px 30px;
-		margin-top: 9vh;
+        margin-top: 9vh;
         font-size: 1.2em;
     }
+
     /*Evaluacón psicológica Responsive*/
     .titleevalpsi {
-  margin: auto;
+        margin: auto;
         text-align: center;
         font-weight: bolder;
         font-size: 10vh;
         color: #072e33;
         padding: 1px;
     }
-    
-    .imgevalpsi{
+
+    .imgevalpsi {
         display: none;
     }
-    .textevalpsi{
-    display: flex;
-    justify-content: center;
+
+    .textevalpsi {
+        display: flex;
+        justify-content: center;
         margin-left: 3vh;
-   
     }
 }
+
+
+
   
