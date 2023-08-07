@@ -315,7 +315,7 @@ header {
 	color: #000000;
 }
 
-#team-img {
+.team-img {
 	border-radius: 30px 30px 30px 30px;
 	width: 250px;
 	height: auto;

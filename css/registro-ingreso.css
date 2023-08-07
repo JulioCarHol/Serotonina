@@ -54,12 +54,11 @@ h2 {
 
 body {
   margin: 0;
-  background: url(https://i.ibb.co/K65hDFY/Red-and-White-Modern-Safe-Flight-Album-Cover.png) no-repeat fixed;
+  background-color: #15d4d7;
   background-size: cover;
   font-size: 13px;
   line-height: 1.8;
   color: #222;
-  font-weight: 400px;
   font-family: var(--font);
 }
 

@@ -20,14 +20,15 @@
 /* ------------------------ Estilos del formulario -------------------------- */
 html,
 body {
-  background-image: url('https://files.123freevectors.com/wp-content/original/119206-abstract-blue-background-graphic-design.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
   font-family: var(--font);
-  height: 90vh;
   margin: 0;
   padding: 0;
+}
+
+body{
+  background-image: url(img/contacto/background.png);
 }
 
 /* Estilos para el formulario */
@@ -106,7 +107,7 @@ main {
 
 /* Estilos para el fondo semitransparente del contenedor del formulario */
 .bg-semi-transparent {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: var(--color-4);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);

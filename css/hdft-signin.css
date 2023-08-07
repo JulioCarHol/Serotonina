@@ -31,34 +31,35 @@ header {
     margin-top: 4vh;
     display: flex;
     justify-content: space-between;
-    align-items: left;
     width: 93%;
     box-sizing: border-box;
     font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .navbar a {
-    color: whitesmoke;
+    color: #072e33;
     font-size: medium;
     font-weight: bold;
     font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.navbar a:hover {
-    /*Efecto de raya bajo y sombreado por encima*/
-    border-bottom: 2px solid white;
-}
 
 .navbar .logo {
     font-size: 2em;
     font-weight: bold;
     margin-top: 0.1em;
     margin-left: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar .nav-links ul {
     display: flex;
     margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar .nav-links ul li {
@@ -68,9 +69,14 @@ header {
 .nav-links ul li .carro {
     width: auto !important;
     height: auto !important;
-    margin: 1 35px;
     text-decoration: none;
     list-style: none;
+
+}
+
+.nav-links ul li .carro img {
+    margin-top: 10px;
+    color: black;
 }
 
 .navbar .nav-links ul li .active a {
@@ -101,15 +107,16 @@ menuIcon {
     margin-top: 20vh;
     padding: 2vh 9%;
     height: auto;
-  }
-  
-  .footer-left {
+}
+
+.footer-left {
     flex-basis: 100%;
     margin-bottom: 2px;
     text-align: right;
-  }
-  /*Bogotá*/
-  .footer-center .cont {
+}
+
+/*Bogotá*/
+.footer-center .cont {
     width: 97%;
     flex-basis: 50%;
     text-align: right;
@@ -118,55 +125,55 @@ menuIcon {
     color: #fffefd;
     font-weight: lighter;
     font-size: 2.4vh;
-  }
-  
-  .footer-right {
+}
+
+.footer-right {
     flex-basis: 80%;
     text-align: right;
-  }
-  
-  .footer h2 {
+}
+
+.footer h2 {
     font-size: 18px;
     font-weight: 70;
     color: white;
     line-height: 4px;
     margin: 0;
-  }
-  
-  .footer p {
+}
+
+.footer p {
     color: white;
     width: 30%;
     font-size: 14px;
     margin: 0;
     text-align: left;
     padding: 3px;
-  }
-  
-  .footer .about {
+}
+
+.footer .about {
     margin-bottom: 10px;
     font-size: 9vh;
     color: white;
-  }
-  
-  .footer .aboutUs {
+}
+
+.footer .aboutUs {
     font-size: 2vh;
-  }
-  
-  .footer .icons {
+}
+
+.footer .icons {
     margin-top: 6vh;
-   
-  
-  }
-  
-  .footer .icons a {
+
+
+}
+
+.footer .icons a {
     color: white;
     margin-right: 6vh;
     text-align: right;
     margin-left: -2vh;
     font-size: 8vh;
     flex-direction: row;
-  
-  }
+
+}
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                                          Media Queries                                         */
@@ -174,7 +181,7 @@ menuIcon {
 
 /* ----------------------------------------- Para Navbar ---------------------------------------- */
 
-@media screen and (max-width:900px) {
+@media screen and (max-width: 900px) {
     .navbar {
         padding-right: 0;
         margin: 0;
@@ -200,7 +207,7 @@ menuIcon {
         backdrop-filter: blur(10px);
         width: 100%;
         height: 100vh;
-        display: flexbox;
+        display: flex;
         justify-content: center;
         align-items: center;
         margin-left: 100%;
@@ -225,7 +232,6 @@ menuIcon {
     }
 
     /* ----------------------------------------- Para Footer ---------------------------------------- */
-
     @media screen and (max-width: 768px) {
         .footer {
             padding: 15px 5%;
