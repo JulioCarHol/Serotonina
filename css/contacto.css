@@ -18,71 +18,129 @@
 }
 
 /* ------------------------ Estilos del formulario -------------------------- */
-html,
+*{
+  color: black;
+  font-family: "Source Code Pro";
+
+
+}
+
+
 body {
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: var(--font);
-  margin: 0;
-  padding: 0;
-}
-
-body{
   background-image: url(img/contacto/background.png);
+  background-color: #16aaad;
+
 }
 
-/* Estilos para el formulario */
-main {
-  color: var(--color-3);
-  font-family: var(--font), sans-serif;
-  display: flex;
-  flex-direction: column;
-  height: 80vh;
-  align-items: center;
-  justify-content: center;
-  margin-top:50px;
-  margin-bottom: 50px;
-}
 
-/* Estilos personalizados para el contenedor izquierdo dentro de contactMain */
-#leftContainer {
-  background-image: url('img/contacto/Contac.jpg');
-  background-size: cover;
-  background-position: center;
+
+/* Estilos personalizados para el contenedor izquierdo dentro de contactM */
+.leftContainer {
   display: flex;
   align-items:center;
-  position: relative; /* Agrega posición relativa para poder superponer el texto */
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px 0px 0px 10px;
+  height: 700px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-1);
+
 }
 
-.text-container {
+.leftContainer .imgleftcontainer{
+  width: 510px;
+  border-radius: 30px;
+  margin-top: 50px;
+
+}
+
+.contactMain{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  flex-direction: row;
+  margin: 200px 20px;
+
+
+}
+.divcontactform{
+  margin-top: 100px ;
+}
+
+.textdivleftcontainer {
   /* Si deseas ajustar el ancho del contenedor de texto */
-  max-width: 100%;
-  margin-left: 15px;
-  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+
+}
+
+.leftContainer .textdivleftcontainer h1 {
+  font-size: 50px;
+  margin-bottom: 70px;
+}
+
+.leftContainer .textdivleftcontainer h5 {
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 /* Estilos para el texto en el contenedor izquierdo */
 #leftContainer h1,
 #leftContainer h5,
 #leftContainer h6 {
-  color: #fff; /* Cambia el color del texto para que sea visible en el fondo */
+  color: black; /* Cambia el color del texto para que sea visible en el fondo */
 }
 
 /* Estilos para el fondo semitransparente del contenedor del formulario */
 #rightContainer {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
+  border-radius: 0px 10px 10px 0px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-1);
+
 }
 
 /* Estilos para el formulario */
 #contactForm {
-  margin-top: 20px;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
 }
 
+
 .form-group {
-  margin-bottom: 20px;
+  margin: 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Open Sans";
+
+}
+
+.form-group label {
+margin: 10px;
+  font-weight: bold;
+
+}
+
+.button, input{
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
 }
 
 .button-container {
@@ -90,9 +148,17 @@ main {
   justify-content: center;
 }
 
+#message{
+  width: 300px;
+  height: 200px;
+  max-width: 400px;
+  max-height: 250px;
+}
+
+
 /* Estilos para el botón Enviar */
 #submitButton {
-  background-color: #f563bbc0; /* Color del botón */
+  background-color: #6da5c0; /* Color del botón */
   color: #fff; /* Color del texto del botón */
   font-weight: 600;
   border: none;
@@ -102,13 +168,6 @@ main {
 }
 
 #submitButton:hover {
-  background-color: #f563bb; /* Color del botón al pasar el cursor */
+  background-color: #294D61; /* Color del botón al pasar el cursor */
 }
 
-/* Estilos para el fondo semitransparente del contenedor del formulario */
-.bg-semi-transparent {
-  background-color: var(--color-4);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-}

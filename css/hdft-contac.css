@@ -20,27 +20,26 @@
 }
 
 .navbar {
-    position: absolute;
     margin: 1.4em;
     margin-top: 4vh;
     display: flex;
     justify-content: space-between;
-    align-items: left;
+    align-items: center;
     width: 93%;
     box-sizing: border-box;
-    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Source Code Pro";
 }
 
 .navbar a {
     color: whitesmoke;
     font-size: medium;
     font-weight: bold;
-    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Source Code Pro";
 }
 
 .navbar a:hover {
     /*Efecto de raya bajo y sombreado por encima*/
-    border-bottom: 2px solid white;
+    font-size: 16.5px;
 }
 
 .navbar .logo {
@@ -48,11 +47,16 @@
     font-weight: bold;
     margin-top: 0.1em;
     margin-left: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar .nav-links ul {
     display: flex;
     margin-top: 1em;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar .nav-links ul li {
@@ -62,7 +66,6 @@
 .nav-links ul li .carro {
     width: auto !important;
     height: auto !important;
-    margin: 1 35px;
     text-decoration: none;
     list-style: none;
 }
@@ -198,7 +201,7 @@ menuIcon {
         backdrop-filter: blur(10px);
         width: 40%;
         height: 100vh;
-        display: flexbox;
+        display: flex;
         justify-content: center;
         align-items: center;
         margin-left: 67%;
@@ -214,7 +217,7 @@ menuIcon {
     .nav-links ul {
         display: flex;
         flex-direction: column;
-        align-items: right;
+        align-items: center;
     }
 
     .navbar .nav-links ul li {
