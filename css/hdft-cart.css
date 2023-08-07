@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------------------------------------------- */
-/*                           ESTILOS PARA NAVBAR Y FOOTER DE CARRITO                              */
+/*                           ESTILOS PARA NAVBAR Y FOOTER CON RESPONSIVE                          */
 /* ---------------------------------------------------------------------------------------------- */
 
 :root {
@@ -19,34 +19,26 @@
   list-style: none;
 }
 
-header {
-  font-family: var(--font);
-  height: 100px;
-  width: 100px;
-}
-
 .navbar {
-  position: absolute;
   margin: 1.4em;
   margin-top: 4vh;
   display: flex;
   justify-content: space-between;
-  align-items: left;
+  align-items: center;
   width: 93%;
   box-sizing: border-box;
-  font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Source Code Pro";
 }
 
 .navbar a {
   color: whitesmoke;
   font-size: medium;
   font-weight: bold;
-  font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Source Code Pro";
 }
 
-.navbar a:hover {
-  /*Efecto de raya bajo y sombreado por encima*/
-  border-bottom: 2px solid white;
+.navbar .nav-links ul li:hover {
+  transform: scale(1.1);
 }
 
 .navbar .logo {
@@ -54,11 +46,16 @@ header {
   font-weight: bold;
   margin-top: 0.1em;
   margin-left: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar .nav-links ul {
   display: flex;
   margin-top: 1em;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar .nav-links ul li {
@@ -68,7 +65,6 @@ header {
 .nav-links ul li .carro {
   width: auto !important;
   height: auto !important;
-  margin: 1 35px;
   text-decoration: none;
   list-style: none;
 }
@@ -91,26 +87,28 @@ menuIcon {
   display: none;
 }
 
+
 /* ------------------------------------ Estilos Pie de Página ----------------------------------- */
-/* Estilos para el footer específico con la clase .custom-footer */
-.custom-footer {
+
+.footer {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   background-color: var(--color-0);
   color: white;
-  margin-top: 20vh;
+  margin-top: 2vh;
   padding: 2vh 9%;
   height: auto;
 }
 
-.custom-footer .footer-left {
+.footer-left {
   flex-basis: 100%;
   margin-bottom: 2px;
   text-align: right;
 }
 
-.custom-footer .footer-center .cont {
+/*Bogotá*/
+.footer-center .cont {
   width: 97%;
   flex-basis: 50%;
   text-align: right;
@@ -121,12 +119,12 @@ menuIcon {
   font-size: 2.4vh;
 }
 
-.custom-footer .footer-right {
+.footer-right {
   flex-basis: 80%;
   text-align: right;
 }
 
-.custom-footer h2 {
+.footer h2 {
   font-size: 18px;
   font-weight: 70;
   color: white;
@@ -134,7 +132,7 @@ menuIcon {
   margin: 0;
 }
 
-.custom-footer p {
+.footer p {
   color: white;
   width: 30%;
   font-size: 14px;
@@ -143,27 +141,30 @@ menuIcon {
   padding: 3px;
 }
 
-.custom-footer .about {
+.footer .about {
   margin-bottom: 10px;
   font-size: 9vh;
   color: white;
 }
 
-.custom-footer .aboutUs {
+.footer .aboutUs {
   font-size: 2vh;
 }
 
-.custom-footer .icons {
+.footer .icons {
   margin-top: 6vh;
+
+
 }
 
-.custom-footer .icons a {
+.footer .icons a {
   color: white;
   margin-right: 6vh;
   text-align: right;
   margin-left: -2vh;
   font-size: 8vh;
   flex-direction: row;
+
 }
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -172,7 +173,7 @@ menuIcon {
 
 /* ----------------------------------------- Para Navbar ---------------------------------------- */
 
-@media screen and (max-width:750px) {
+@media screen and (max-width: 750px) {
   .navbar {
     padding-right: 0;
     margin: 0;
@@ -197,9 +198,9 @@ menuIcon {
     position: absolute;
     background-color: rgba(36, 50, 50, 0.472);
     backdrop-filter: blur(10px);
-    width: 40%;
-    height: 100vh;
-    display: flexbox;
+    width: 30%;
+    height: 40vh;
+    display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 67%;
@@ -215,32 +216,44 @@ menuIcon {
   .nav-links ul {
     display: flex;
     flex-direction: column;
-    align-items: right;
+    align-items: center;
   }
 
   .navbar .nav-links ul li {
-    margin: 25px 30px;
-    margin-top: 9vh;
+    margin: 15px 30px;
     font-size: 1.2em;
+
   }
 
-  /* ----------------------------------------- Para Footer ---------------------------------------- */
+  .leftContainer .imgleftcontainer {
+    width: 150px;
 
-  @media screen and (max-width: 768px) {
-    .footer {
-      padding: 15px 5%;
-    }
-
-    .footer-left,
-    .footer-center,
-    .footer-right {
-      flex-basis: 100%;
-      text-align: center;
-    }
-
-    .footer h2 {
-      font-size: 22px;
-      line-height: 30px;
-    }
   }
+
+}
+
+
+/* ----------------------------------------- Para Footer ---------------------------------------- */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 15px 5%;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .footer h2 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+
+  .leftContainer {
+    width: 500px;
+  }
+
 }

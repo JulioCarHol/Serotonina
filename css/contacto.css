@@ -19,7 +19,7 @@
 
 /* ------------------------ Estilos del formulario -------------------------- */
 *{
-  color: black;
+  color: white;
   font-family: "Source Code Pro";
 
 
@@ -27,8 +27,7 @@
 
 
 body {
-  background-image: url(img/contacto/background.png);
-  background-color: #16aaad;
+  background-color: #15d4d7;
 
 }
 
@@ -43,14 +42,15 @@ body {
   border-radius: 10px 0px 0px 10px;
   height: 700px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-  background-color: var(--color-1);
+  background-color: rgba(15, 152, 156, 0.8)
 
 }
 
 .leftContainer .imgleftcontainer{
-  width: 510px;
+  max-width: 510px;
   border-radius: 30px;
   margin-top: 50px;
+  min-width: 460px;
 
 }
 
@@ -61,7 +61,7 @@ body {
   margin: auto;
   flex-direction: row;
   margin: 200px 20px;
-
+  flex-wrap: wrap;
 
 }
 .divcontactform{
@@ -93,7 +93,7 @@ body {
 #leftContainer h1,
 #leftContainer h5,
 #leftContainer h6 {
-  color: black; /* Cambia el color del texto para que sea visible en el fondo */
+  color: white; /* Cambia el color del texto para que sea visible en el fondo */
 }
 
 /* Estilos para el fondo semitransparente del contenedor del formulario */
@@ -105,7 +105,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-1);
+  background-color: rgba(15, 152, 156, 0.8);
 
 }
 
@@ -141,6 +141,16 @@ margin: 10px;
   border-radius: 8px;
   width: 300px;
   text-align: center;
+  border-bottom-color: #0e9a9f;
+}
+
+input #email .form-control{
+  border-bottom-color: #0e9a9f;
+}
+
+.form-control{
+  height: 30px;
+  color: black;
 }
 
 .button-container {
@@ -153,12 +163,13 @@ margin: 10px;
   height: 200px;
   max-width: 400px;
   max-height: 250px;
+  border-radius: 10px;
 }
 
 
 /* Estilos para el botón Enviar */
 #submitButton {
-  background-color: #6da5c0; /* Color del botón */
+  background-color: var(--color-3); /* Color del botón */
   color: #fff; /* Color del texto del botón */
   font-weight: 600;
   border: none;
@@ -169,5 +180,16 @@ margin: 10px;
 
 #submitButton:hover {
   background-color: #294D61; /* Color del botón al pasar el cursor */
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+  .leftContainer {
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .rightContainer{
+    border-radius: 0px 0px 10px 10px;
+  }
 }
 

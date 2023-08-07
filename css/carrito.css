@@ -22,10 +22,7 @@
 }
 
 body {
-    background-image: url(https://i.ibb.co/m4s1p6s/Azul-Oscuro-y-Rosa-Sencillo-Oscuro-Tecnolog-a-y-Videojuegos-Sitio-Web-La-Venta-Al-Minorista-13.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    background-color: #15d4d7;
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
