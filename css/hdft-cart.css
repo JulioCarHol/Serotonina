@@ -25,30 +25,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 93%;
-  box-sizing: border-box;
-  font-family: "Source Code Pro";
+  width: 90%;
+  font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
 
 .navbar a {
   color: whitesmoke;
   font-size: medium;
   font-weight: bold;
-  font-family: "Source Code Pro";
+  font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
 
 .navbar .nav-links ul li:hover {
-  transform: scale(1.1);
+  color: wheat !important;
 }
 
 .navbar .logo {
-  font-size: 2em;
-  font-weight: bold;
-  margin-top: 0.1em;
-  margin-left: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	font-size: 2em;
+	font-weight: bold;
+	margin-top: 0.1em;
+	margin-left: 2em;
 }
 
 .navbar .nav-links ul {
@@ -64,9 +60,10 @@
 
 .nav-links ul li .carro {
   width: auto !important;
-  height: auto !important;
-  text-decoration: none;
-  list-style: none;
+	height: auto !important;
+	margin: 1 25px;
+	text-decoration: none;
+	list-style: none;
 }
 
 .navbar .nav-links ul li .active a {
@@ -83,89 +80,9 @@
   cursor: pointer;
 }
 
-menuIcon {
-  display: none;
-}
 
 
 /* ------------------------------------ Estilos Pie de Página ----------------------------------- */
-
-.footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  background-color: var(--color-0);
-  color: white;
-  margin-top: 2vh;
-  padding: 2vh 9%;
-  height: auto;
-}
-
-.footer-left {
-  flex-basis: 100%;
-  margin-bottom: 2px;
-  text-align: right;
-}
-
-/*Bogotá*/
-.footer-center .cont {
-  width: 97%;
-  flex-basis: 50%;
-  text-align: right;
-  margin-bottom: 1.8vh;
-  margin-top: -9vh;
-  color: #fffefd;
-  font-weight: lighter;
-  font-size: 2.4vh;
-}
-
-.footer-right {
-  flex-basis: 80%;
-  text-align: right;
-}
-
-.footer h2 {
-  font-size: 18px;
-  font-weight: 70;
-  color: white;
-  line-height: 4px;
-  margin: 0;
-}
-
-.footer p {
-  color: white;
-  width: 30%;
-  font-size: 14px;
-  margin: 0;
-  text-align: left;
-  padding: 3px;
-}
-
-.footer .about {
-  margin-bottom: 10px;
-  font-size: 9vh;
-  color: white;
-}
-
-.footer .aboutUs {
-  font-size: 2vh;
-}
-
-.footer .icons {
-  margin-top: 6vh;
-
-
-}
-
-.footer .icons a {
-  color: white;
-  margin-right: 6vh;
-  text-align: right;
-  margin-left: -2vh;
-  font-size: 8vh;
-  flex-direction: row;
-
-}
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                                          Media Queries                                         */
@@ -234,26 +151,3 @@ menuIcon {
 
 
 /* ----------------------------------------- Para Footer ---------------------------------------- */
-@media screen and (max-width: 768px) {
-  .footer {
-    padding: 15px 5%;
-  }
-
-  .footer-left,
-  .footer-center,
-  .footer-right {
-    flex-basis: 100%;
-    text-align: center;
-  }
-
-  .footer h2 {
-    font-size: 22px;
-    line-height: 30px;
-  }
-
-
-  .leftContainer {
-    width: 500px;
-  }
-
-}
