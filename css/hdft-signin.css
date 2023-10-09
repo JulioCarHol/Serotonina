@@ -19,12 +19,6 @@
     list-style: none;
 }
 
-header {
-    font-family: var(--font);
-    height: 100px;
-    width: 100px;
-}
-
 .navbar {
     position: absolute;
     margin: 1.4em;
@@ -93,87 +87,9 @@ header {
     cursor: pointer;
 }
 
-menuIcon {
-    display: none;
-}
-
-/* ------------------------------------ Estilos Pie de Página ----------------------------------- */
-.footer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: var(--color-0);
-    color: white;
-    margin-top: 20vh;
-    padding: 2vh 9%;
-    height: auto;
-}
-
-.footer-left {
-    flex-basis: 100%;
-    margin-bottom: 2px;
-    text-align: right;
-}
-
-/*Bogotá*/
-.footer-center .cont {
-    width: 97%;
-    flex-basis: 50%;
-    text-align: right;
-    margin-bottom: 1.8vh;
-    margin-top: -9vh;
-    color: #fffefd;
-    font-weight: lighter;
-    font-size: 2.4vh;
-}
-
-.footer-right {
-    flex-basis: 80%;
-    text-align: right;
-}
-
-.footer h2 {
-    font-size: 18px;
-    font-weight: 70;
-    color: white;
-    line-height: 4px;
-    margin: 0;
-}
-
-.footer p {
-    color: white;
-    width: 30%;
-    font-size: 14px;
-    margin: 0;
-    text-align: left;
-    padding: 3px;
-}
-
-.footer .about {
-    margin-bottom: 10px;
-    font-size: 9vh;
-    color: white;
-}
-
-.footer .aboutUs {
-    font-size: 2vh;
-}
-
-.footer .icons {
-    margin-top: 6vh;
 
 
-}
 
-.footer .icons a {
-    color: white;
-    margin-right: 6vh;
-    text-align: right;
-    margin-left: -2vh;
-    font-size: 8vh;
-    flex-direction: row;
-
-}
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                                          Media Queries                                         */
@@ -230,23 +146,6 @@ menuIcon {
         margin: 25px 0;
         font-size: 1.2em;
     }
+}
 
     /* ----------------------------------------- Para Footer ---------------------------------------- */
-    @media screen and (max-width: 768px) {
-        .footer {
-            padding: 15px 5%;
-        }
-
-        .footer-left,
-        .footer-center,
-        .footer-right {
-            flex-basis: 100%;
-            text-align: center;
-        }
-
-        .footer h2 {
-            font-size: 22px;
-            line-height: 30px;
-        }
-    }
-}
