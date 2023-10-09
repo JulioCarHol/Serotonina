@@ -19,6 +19,8 @@
     font-family: var(--font);
     list-style: none;
     text-decoration: none !important;
+    margin: 0;
+	padding: 0;
 }
 
 body {
@@ -894,10 +896,21 @@ menuIcon {
     }
 
     .navbar .logo {
-        position: fixed;
-        left: 1em;
-        margin-top: 50px;
-        margin-left: 21px;
+        font-size: 32px;
+		line-height: .2;
+		text-align: center;
+		color: #fff !important;
+		background-color: #83227e;
+		border-radius: 6px;
+		height: auto;
+		max-width: inherit;
+		min-width: inherit;
+		box-shadow: none !important;
+		transition: all ease-in-out 0s;
+		position: absolute;
+		z-index: 12;
+		justify-content: center;
+		align-items: center;
     }
 
 
