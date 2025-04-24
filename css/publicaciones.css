@@ -3,6 +3,14 @@
 /* ---------------------------------------------------------------------------------------------- */
 
 /* ---------------------- Colores y Fuentes -------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
+/*navbar */
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+/*icono*/
+@import url("https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap");
+/* footer: font-family: 'Text Me One', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
+/* title body: font-family: 'Mochiy Pop P One', sans-serif;*/
 :root {
   --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
   --color-0: #049baed9;
@@ -17,6 +25,11 @@
   /*80%*/
   --color-5: #ffffff;
   /*100%*/
+  --font-body: 'Mochiy Pop P One', sans-serif;
+  --font-navbar: "Montserrat", sans-serif;
+  --1-color: #07c2b2;
+  --2-color: #e3bebb;
+  --3-color: #efefef;
 }
 
 * {
@@ -37,7 +50,8 @@ body {
   padding: 0;
   font-size: medium;
   font-weight: 700;
-  font-family: var(--font);
+  font-family: var(--font-body);
+  background-color: #fbfbfb61;
 }
 
 header {
@@ -326,77 +340,127 @@ commentButton{
 
 /* ------------------------------------ ESTILOS PIE DE PÁGINA ----------------------------------- */
 .footer {
+	background-color: #0e9a9f;
+	width: 100%;
+	text-align: left;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 50px;
+	margin-top: 20px;
+	border-radius: 40px 40px 0px 0px;
+	box-shadow: 0px 0px 40px rgba(198, 139, 128, 0.2);
+	box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  background-color: var(--color-0);
-  color: white;
-  margin-top: 20vh;
-  padding: 2vh 9%;
-  height: auto;
+  flex-direction: row;
 }
 
-.footer-left {
-  flex-basis: 100%;
-  margin-bottom: 2px;
-  text-align: right;
-}
-/*Bogotá*/
-.footer-center .cont {
-  width: 97%;
-  flex-basis: 50%;
-  text-align: right;
-  margin-bottom: 1.8vh;
-  margin-top: -9vh;
-  color: #fffefd;
-  font-weight: lighter;
-  font-size: 2.4vh;
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+	display: inline-block;
+	vertical-align: top;
+	font-family: sans-serif;
 }
 
-.footer-right {
-  flex-basis: 80%;
-  text-align: right;
-}
-
-.footer h2 {
-  font-size: 18px;
-  font-weight: 70;
-  color: white;
-  line-height: 4px;
-  margin: 0;
-}
-
-.footer p {
-  color: white;
-  width: 30%;
-  font-size: 14px;
-  margin: 0;
-  text-align: left;
-  padding: 3px;
+.footer .footer-left {
+	width: 33%;
+	padding-right: 25px;
 }
 
 .footer .about {
-  margin-bottom: 10px;
-  font-size: 9vh;
-  color: white;
+	line-height: 20px;
+	color: #f8f8f7;
+	font-size: 19px;
+	font-weight: 700;
+	margin: auto;
+	font-family: var(--font-navbar);
+	text-wrap: balance;
+	text-align: center;
 }
 
-.footer .aboutUs {
-  font-size: 2vh;
+.footer .about span {
+	display: block;
+	color: #f3f2f2;
+	font-size: 30px;
+	margin-bottom: 20px;
+	text-align: center;
 }
 
-.footer .icons {
-  margin-top: 6vh;
- 
-
+.footer .footer-center {
+	width: 30%;
+	padding-left: 50px;
 }
 
-.footer .icons a {
-  color: white;
-  margin-right: 6vh;
-  text-align: right;
-  margin-left: -2vh;
-  font-size: 8vh;
-  flex-direction: row;
+.footer .footer-center i {
+	background-color: #f8f7f6;
+	color: #0bc1b4;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
 
+.footer .footer-center i.fa-envelope {
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer .footer-center p {
+	display: inline-block;
+	font-family: var(--font-navbar);
+	color: #f8f4f1;
+	vertical-align: middle;
+	margin: 0;
+	letter-spacing: 2px;
+}
+
+.footer .footer-center p span {
+	display: block;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 2;
+}
+
+.footer .footer-center p a {
+	color: #e7e3e0;
+	text-decoration: none;
+	font-family: var(--font-navbar);
+}
+
+.footer .footer-right {
+	width: 35%;
+}
+
+.footer-right h2 {
+	color: #f6f4f3;
+	font-size: 36px;
+	font-weight: bolder;
+	margin: 0;
+	font-family: var(--font-navbar);
+	text-align: center;
+}
+
+.footer .menu {
+	color: #f7f2ef;
+	font-family: var(--font-navbar);
+	margin: 20px 0 12px;
+	padding: 0;
+	font-size: 25px;
+	text-align: center;
+}
+
+.footer .menu a {
+	display: inline-block;
+	line-height: 1;
+	text-decoration: none;
+	color: inherit;
+}
+
+.footer .menu a:hover {
+	color: #fef8f7;
 }

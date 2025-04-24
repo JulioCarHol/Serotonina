@@ -20,13 +20,12 @@ header {
 .navbar {
     position: absolute;
     margin: 1.4em;
-	margin-top: 4vh;
     display: flex;
     justify-content: space-between;
-    align-items: left;
-    width: 93%;
-    box-sizing: border-box;
+    align-items: center;
+    width: 90%;
     font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
 }
 
 .navbar a {
@@ -36,8 +35,9 @@ header {
     font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.navbar a:hover{ /*Efecto de raya bajo y sombreado por encima*/
-	zoom: 1.05;
+.navbar a:hover {
+    /*Efecto de raya bajo y sombreado por encima*/
+    color: wheat;
 }
 
 .navbar .logo {
@@ -48,7 +48,7 @@ header {
 }
 
 .navbar .nav-links ul {
-    display:flex;
+    display: flex;
     margin-top: 1em;
     align-items: center;
 }
@@ -60,7 +60,7 @@ header {
 .nav-links ul li .carro {
     width: auto !important;
     height: auto !important;
-    margin: 1 35px;
+    margin: 1px 25px;
     text-decoration: none;
     list-style: none;
 }
@@ -210,24 +210,29 @@ menuIcon {
 }
 
 @media screen and (max-width:750px) {
+    .navbar {
+        padding-right: 0;
+        margin: 0;
+    }
+
     .navbar .logo {
         font-size: 32px;
-        line-height:.2;
+        line-height: .2;
         text-align: center;
-        color:#fff!important ;
+        color: #fff !important;
         background-color: #83227e;
         border-radius: 6px;
         height: auto;
         max-width: inherit;
-        min-width:inherit;
-        box-shadow:none !important;
+        min-width: inherit;
+        box-shadow: none !important;
         transition: all ease-in-out 0s;
         position: absolute;
         z-index: 12;
         justify-content: center;
         align-items: center;
-
     }
+
     .boton-container {
         /* Estilos del contenedor del botón */
         display:flex;
@@ -252,46 +257,31 @@ menuIcon {
     
     }
 
-    .navbar {
-        padding-right: 0;
-        margin: 0;
-    }
-
-    .navbar .logo {
-        position: fixed;
-        left: 1em;
-        margin-top: 50px;
-		margin-left: 21px;
-    }
-
     .navbar .menu-hamburger {
-        margin-top: 100px;
+        margin-top: 60vh;
         display: block;
         z-index: 12;
-      
     }
 
     .nav-links {
         top: 0;
         z-index: 10;
         position: absolute;
-        background-color: rgba(36, 96, 139, 0.376);
+        background-color: rgba(36, 50, 50, 0.472);
         backdrop-filter: blur(10px);
         width: 40%;
-        height: 45vh;
-        display: flexbox;
+        height: 100vh;
+        display: flex;
         justify-content: center;
         align-items: center;
         margin-left: 67%;
         transition: all 0.5s ease;
-
-
     }
 
     .nav-links.mobile-menu {
         margin: 0;
         padding: 0;
-        width: 100px;
+        width: 100%;
     }
 
     .nav-links ul {
@@ -301,10 +291,9 @@ menuIcon {
     }
 
     .navbar .nav-links ul li {
-        margin: -50px 50px;
-		margin-top: 9vh;
+        margin: 25px 30px;
+        margin-top: 9vh;
         font-size: 1.2em;
-        align-items: center;
     }
 
     .hero-text {

@@ -12,11 +12,14 @@
   --color-5: #ffffff;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: var(--font);
   font-weight: 600;
-  margin: 0;
-  padding: 0;
   background-image: url(https://i.ibb.co/GvJwSsb/Azul-Oscuro-y-Rosa-Sencillo-Oscuro-Tecnolog-a-y-Videojuegos-Sitio-Web-La-Venta-Al-Minorista-12.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -102,85 +105,10 @@ p {
 a {
   color: rgb(15, 130, 130);
   text-decoration: none;
-  text-decoration: overline;
 }
 
 a:hover {
   color: var(--color-3);
-}
-
-/* Estilos para el footer específico con la clase .custom-footer */
-.custom-footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  background-color: var(--color-0);
-  color: white;
-  margin-top: 20vh;
-  padding: 2vh 9%;
-  height: auto;
-}
-
-.custom-footer .footer-left {
-  flex-basis: 100%;
-  margin-bottom: 2px;
-  text-align: right;
-}
-
-.custom-footer .footer-center .cont {
-  width: 97%;
-  flex-basis: 50%;
-  text-align: right;
-  margin-bottom: 1.8vh;
-  margin-top: -9vh;
-  color: #fffefd;
-  font-weight: lighter;
-  font-size: 2.4vh;
-}
-
-.custom-footer .footer-right {
-  flex-basis: 80%;
-  text-align: right;
-}
-
-.custom-footer h2 {
-  font-size: 18px;
-  font-weight: 70;
-  color: white;
-  line-height: 4px;
-  margin: 0;
-}
-
-.custom-footer p {
-  color: white;
-  width: 30%;
-  font-size: 14px;
-  margin: 0;
-  text-align: left;
-  padding: 3px;
-}
-
-.custom-footer .about {
-  margin-bottom: 10px;
-  font-size: 9vh;
-  color: white;
-}
-
-.custom-footer .aboutUs {
-  font-size: 2vh;
-}
-
-.custom-footer .icons {
-  margin-top: 6vh !important;
-}
-
-.custom-footer .icons a {
-  color: white !important;
-  margin-right: 6vh !important;
-  text-align: right !important;
-  margin-left: -2vh !important;
-  font-size: 8vh !important;
-  flex-direction: row !important;
 }
 
 /* ----------------------------------------- Responsive ----------------------------------------- */
@@ -188,12 +116,10 @@ a:hover {
 @media (max-width: 767px) {
   main {
     grid-template-columns: 1fr;
-    /* Cambiar a una columna en dispositivos móviles */
   }
 
   section {
     margin: 10px 0;
-    /* Espaciado vertical en dispositivos móviles */
   }
 }
 
@@ -201,11 +127,9 @@ a:hover {
 @media (min-width: 768px) and (max-width: 1023px) {
   main {
     grid-template-columns: 1fr 1fr;
-    /* Restaurar la distribución de dos columnas en tablets */
   }
 
   section {
     margin: 10px;
-    /* Restaurar el margen original en tablets */
   }
 }

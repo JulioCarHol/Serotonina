@@ -46,15 +46,15 @@ header{
 }
 
 .navbar {
+    position: absolute;
     margin: 1.4em;
     margin-top: 4vh;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 90%;
+    align-items: flex-start;
+    width: 93%;
     box-sizing: border-box;
-    font-family: "Source Code Pro";
-    position: absolute;
+    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .navbar a {
@@ -87,11 +87,11 @@ header{
 }
 
 .nav-links ul li .carro {
-	width: auto !important;
-	height: auto !important;
-	margin: 1 25px;
-	text-decoration: none;
-	list-style: none;
+    width: auto !important;
+    height: auto !important;
+    margin: 1 35px;
+    text-decoration: none;
+    list-style: none;
 }
 
 .navbar .nav-links ul li .active a {
