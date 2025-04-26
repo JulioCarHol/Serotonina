@@ -149,6 +149,7 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-family: var(--font-navbar);
 }
 
 .titledescription2 {
@@ -234,10 +235,10 @@ header {
 
 .textmivi {
 	text-align: center;
-	font-size: 19px;
-	display: flex;
-	justify-content: center;
-	padding: 0px 10px;
+	font-size: 18px;
+	color: #000000;
+	font-weight: bold;
+	font-family: var(--font-navbar);
 }
 
 .misionvi {
@@ -279,6 +280,7 @@ header {
 	font-size: 18px;
 	color: #000000;
 	font-weight: bold;
+	font-family: var(--font-navbar);
 }
 
 .workteam {
@@ -948,4 +950,13 @@ header {
 		display: none;
 		text-align: left;
 	}
+}
+
+.textmivi,
+.introduccion p {
+	text-align: center;
+	font-size: 18px;
+	color: #000000;
+	font-weight: bold;
+	font-family: var(--font-navbar);
 }
