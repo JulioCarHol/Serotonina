@@ -55,10 +55,15 @@ header{
     width: 93%;
     box-sizing: border-box;
     font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 10px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .navbar a {
-  color: whitesmoke;
+  color: #333;
 	font-size: medium;
 	font-weight: bold;
 	font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -66,7 +71,7 @@ header{
 
 .navbar a:hover {
 	/*Efecto de raya bajo y sombreado por encima*/
-	color: wheat;
+	color: #0e9a9f;
 }
 
 .navbar .logo {
@@ -74,6 +79,7 @@ header{
 	font-weight: bold;
 	margin-top: 0.1em;
 	margin-left: 2em;
+	color: #0e9a9f;
 }
 
 .navbar .nav-links ul {
@@ -95,7 +101,7 @@ header{
 }
 
 .navbar .nav-links ul li .active a {
-    color: #05161A;
+    color: #0e9a9f;
     font-weight: 600;
 }
 
@@ -109,130 +115,152 @@ header{
 }
 
 body {
-  background-color: #15d4d7 !important;
-
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
-
-
 
 /* Estilos personalizados para el contenedor izquierdo dentro de contactM */
 .leftContainer {
+  flex: 1;
   display: flex;
   align-items:center;
   justify-content: center;
   flex-direction: column;
-  border-radius: 10px 0px 0px 10px;
-  height: 700px;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-  background-color: rgba(15, 152, 156, 0.8)
-
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 0;
+  height: auto;
+  min-height: 500px;
 }
 
 .leftContainer .imgleftcontainer{
-  max-width: 510px;
-  border-radius: 30px;
-  margin-top: 50px;
-  min-width: 460px;
-
+  max-width: 300px;
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 30px;
+  object-fit: cover;
+  height: auto;
 }
 
 .contactMain{
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: auto;
+  align-items: stretch;
   flex-direction: row;
-  margin: 200px 20px;
-  flex-wrap: wrap;
-
+  gap: 30px;
+  background: linear-gradient(135deg, rgba(14, 154, 159, 0.1) 0%, rgba(238, 238, 238, 0.2) 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
 }
 .divcontactform{
-  margin-top: 100px ;
+  margin: 120px auto 60px auto;
+  padding: 0 20px;
 }
 
 .textdivleftcontainer {
-  /* Si deseas ajustar el ancho del contenedor de texto */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 80%;
-
+  width: 100%;
+  max-width: 400px;
 }
 
 .leftContainer .textdivleftcontainer h1 {
-  font-size: 50px;
-  margin-bottom: 70px;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #0e9a9f;
+  font-weight: 700;
 }
 
 .leftContainer .textdivleftcontainer h5 {
-  font-size: 15px;
-  margin-bottom: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 500;
+  line-height: 1.6;
 }
 
-/* Estilos para el texto en el contenedor izquierdo */
-#leftContainer h1,
-#leftContainer h5,
-#leftContainer h6 {
-  color: white; /* Cambia el color del texto para que sea visible en el fondo */
+.leftContainer .textdivleftcontainer h6 {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  margin-top: 20px;
 }
 
 /* Estilos para el fondo semitransparente del contenedor del formulario */
 #rightContainer {
-  border-radius: 0px 10px 10px 0px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  height: 700px;
+  flex: 1;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 0;
+  height: auto;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(15, 152, 156, 0.8);
-
 }
 
 /* Estilos para el formulario */
 #contactForm {
-  padding: 100px;
+  width: 100%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: auto;
+  margin: 0;
 }
 
 
 .form-group {
-  margin: 20px 0px;
+  margin: 15px 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
-  font-family: "Open Sans";
-
+  font-family: var(--font-navbar);
+  width: 100%;
 }
 
 .form-group label {
-margin: 10px;
-  font-weight: bold;
-
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  align-self: flex-start;
 }
 
-.button, input{
-  border-radius: 8px;
-  width: 300px;
-  text-align: center;
-  border-bottom-color: #0e9a9f;
+.form-control {
+  width: 100%;
+  height: 45px;
+  padding: 12px 15px;
+  border: 2px solid rgba(14, 154, 159, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-input #email .form-control{
-  border-bottom-color: #0e9a9f;
-}
-
-.form-control{
-  height: 30px;
-  color: black;
+.form-control:focus {
+  outline: none;
+  border-color: #0e9a9f;
+  box-shadow: 0 0 0 3px rgba(14, 154, 159, 0.1);
 }
 
 .button-container {
@@ -240,12 +268,26 @@ input #email .form-control{
   justify-content: center;
 }
 
-#message{
-  width: 300px;
-  height: 200px;
-  max-width: 400px;
-  max-height: 250px;
+#message {
+  width: 100%;
+  height: 120px;
+  max-width: 100%;
+  max-height: 200px;
   border-radius: 10px;
+  padding: 12px 15px;
+  border: 2px solid rgba(14, 154, 159, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  resize: vertical;
+  transition: all 0.3s ease;
+}
+
+#message:focus {
+  outline: none;
+  border-color: #0e9a9f;
+  box-shadow: 0 0 0 3px rgba(14, 154, 159, 0.1);
 }
 
 /*---------Footer----------*/
@@ -418,27 +460,44 @@ input #email .form-control{
 
 /* Estilos para el botón Enviar */
 #submitButton {
-  background-color: var(--color-3); /* Color del botón */
-  color: #fff; /* Color del texto del botón */
+  background: linear-gradient(135deg, #0e9a9f 0%, #07c2b2 100%);
+  color: #fff;
   font-weight: 600;
   border: none;
-  border-radius: 5px;
-  padding: 15px 30px;
+  border-radius: 10px;
+  padding: 15px 40px;
   cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(14, 154, 159, 0.3);
 }
 
 #submitButton:hover {
-  background-color: #294D61; /* Color del botón al pasar el cursor */
-  transform: scale(1.1);
+  background: linear-gradient(135deg, #0a7a7a 0%, #0a9a8a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(14, 154, 159, 0.4);
 }
 
 @media screen and (max-width: 768px) {
-  .leftContainer {
-    border-radius: 10px 10px 0px 0px;
+  .contactMain {
+    flex-direction: column;
+    gap: 0;
+    margin: 0 10px;
   }
 
-  .rightContainer{
-    border-radius: 0px 0px 10px 10px;
+  .leftContainer {
+    border-radius: 20px 20px 0 0;
+    padding: 30px 20px;
+  }
+
+  .rightContainer {
+    border-radius: 0 0 20px 20px;
+    padding: 30px 20px;
+  }
+
+  .divcontactform {
+    margin: 80px auto 40px auto;
+    padding: 0 10px;
   }
 }
 

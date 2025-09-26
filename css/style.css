@@ -24,17 +24,23 @@ header {
 .navbar {
     position: absolute;
     margin: 1.4em;
+    margin-top: 4vh;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 90%;
+    align-items: flex-start;
+    width: 93%;
+    box-sizing: border-box;
     font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-decoration: none;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 10px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 100; /* Asegura que esté por encima de otros elementos */
 }
 
 .navbar a {
-    color: whitesmoke;
+    color: #333;
     font-size: medium;
     font-weight: bold;
     font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -42,19 +48,21 @@ header {
 }
 
 .navbar a:hover {
-    color: wheat;
+    color: #0e9a9f;
 }
 
 .navbar .logo {
     font-size: 2em;
     font-weight: bold;
-    margin-top: 0.1em;
+    margin-top: 0.3em;
     margin-left: 2em;
+    color: #0e9a9f;
 }
 
 .navbar .nav-links ul {
     display: flex;
-    margin-top: 1em;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
     align-items: center;
 }
 

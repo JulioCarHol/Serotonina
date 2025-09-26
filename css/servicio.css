@@ -23,51 +23,136 @@
 }
 
 * {
-    font-family: var(--font);
-    list-style: none;
-    text-decoration: none !important;
     margin: 0;
-	padding: 0;
+    padding: 0;
+    text-decoration: none !important;
+    list-style: none;
 }
 
 body {
+    margin: 0;
+    padding: 0;
     background-color: #fbfbfb61;
 }
+
+/* Header container */
+.header-container {
+	position: relative;
+	height: 60vh;
+	width: 100%;
+	overflow: hidden;
+}
+
+/*img nav*/
+#gif1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	background-position: center;
+	z-index: -1;
+}
+
+.centered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+	margin-top: 20px;
+}
+
+/*¡Qué placer tenerte aquí, conócenos!*/
+#titledescription {
+	display: flex;
+	text-align: center;
+	margin: auto;
+	margin-top: 50px;
+	height: 100%;
+	font-size: 40px;
+	color: #333;
+	font-family: var(--font-navbar);
+	font-weight: bold;
+}
+
+.icons {
+	z-index: 2;
+	position: absolute;
+	top: 50%;
+	padding: 0 5%;
+	transform: translateY(-60%);
+}
+.icons i {
+	display: block;
+	margin: 16px 0;
+	margin-top: 3vh;
+	font-size: 28px;
+	color: white;
+	transition: all 0.50s ease;
+}
+.icons i:hover {
+	color: rgb(12, 186, 189);
+	transform: translateY(-7px);
+}
+
+.botonbannerservices {
+	margin-top: 30px;
+	font-weight: bold;
+	z-index: 2;
+	position: relative;
+}
+
 
 .navbar {
     position: absolute;
     margin: 1.4em;
+    margin-top: 4vh;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 90%;
+    align-items: flex-start;
+    width: 93%;
+    box-sizing: border-box;
     font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-decoration: none;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 10px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 .navbar a {
-    color: whitesmoke;
+    color: #333;
     font-size: medium;
     font-weight: bold;
     font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    z-index: 1001;
 }
 
 .navbar a:hover {
     /*Efecto de raya bajo y sombreado por encima*/
-    color: wheat;
+    color: #0e9a9f;
 }
 
 .navbar .logo {
-    font-size: 2em;
-    font-weight: bold;
-    margin-top: 0.1em;
-    margin-left: 2em;
+	font-size: 2em;
+	font-weight: bold;
+	margin-top: 0.5em;
+	margin-left: 2em;
+	color: #0e9a9f;
+	position: relative;
+	z-index: 1001;
 }
 
 .navbar .nav-links ul {
     display: flex;
     margin-top: 1em;
     align-items: center;
+    position: relative;
+    z-index: 1001;
 }
 
 .navbar .nav-links ul li {
@@ -77,13 +162,13 @@ body {
 .nav-links ul li .carro {
     width: auto !important;
     height: auto !important;
-    margin: 1px 25px;
+    margin: 1 35px;
     text-decoration: none;
     list-style: none;
 }
 
 .navbar .nav-links ul li .active a {
-    color: #05161A;
+    color: #0e9a9f;
     font-weight: 600;
 }
 
@@ -132,13 +217,11 @@ menuIcon {
     background-image: url(https://i.ibb.co/tKChtjP/Servicios.png);
     background-size: cover;
     background-color: #055f5e51;
-    display: flex;
-    justify-content: left;
-    align-items: center;
     height: 800px;
     background-blend-mode: multiply;
     background-size: cover;
     margin-bottom: 30px;
+    position: relative;
 }
 
 /* Botón SIN RESPONSIVE */
@@ -202,7 +285,7 @@ menuIcon {
 }
 
 .icons {
-    z-index: 2;
+    z-index: 1001;
     position: absolute;
     top: 50%;
     padding: 0 5%;
@@ -901,7 +984,7 @@ menuIcon {
     }
 
     .navbar .logo {
-        font-size: 32px;
+		font-size: 32px;
 		line-height: .2;
 		text-align: center;
 		color: #fff !important;
@@ -916,48 +999,49 @@ menuIcon {
 		z-index: 12;
 		justify-content: center;
 		align-items: center;
-    }
+		left: 1em;
+		margin-top: 50px;
+		margin-left: 21px;
+	}
 
 
     .navbar .menu-hamburger {
-        margin-top: 60vh;
+        margin-top: 100px;
         display: block;
         z-index: 12;
 
     }
 
     .nav-links {
-        top: 0;
-        z-index: 10;
-        position: absolute;
-        background-color: rgba(36, 50, 50, 0.472);
-        backdrop-filter: blur(10px);
-        width: 40%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 67%;
-        transition: all 0.5s ease;
-    }
+		top: 0;
+		z-index: 10;
+		position: absolute;
+		background-color: rgba(36, 96, 139, 0.376);
+		backdrop-filter: blur(10px);
+		width: 40%;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: 67%;
+		transition: all 0.5s ease;
+	}
 
     .nav-links.mobile-menu {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-    }
-
-    .nav-links ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar .nav-links ul li {
-        margin: 25px 30px;
-        margin-top: 9vh;
-        font-size: 1.2em;
-    }
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+	.nav-links ul {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.navbar .nav-links ul li {
+		margin: 35px 50px;
+		margin-top: 9vh;
+		font-size: 1.2em;
+	}
 
     /*Evaluacón psicológica Responsive*/
     .titleevalpsi {
