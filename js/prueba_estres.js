@@ -31,17 +31,19 @@ document.addEventListener('DOMContentLoaded', function () {
                         return scale[i];
                     }
                 }
+                return scale[scale.length - 1];
             }
 
             let stressLevel = getStressLevel(score);
 
             // Muestra los resultados en el documento HTML
             let resultsSection = document.getElementById('results');
-            resultsSection.innerHTML = '<h3>Resultados de la prueba:</h3>' +
-                '<p>Tu puntuación de estrés es: ' + score + '</p>' +
-                '<p>Nivel de estrés: ' + stressLevel.level + '</p>' +
-                '<p>' + stressLevel.description + '</p>' +
-                '<p>' + stressLevel.recommendation + '</p>';
+            resultsSection.innerHTML =
+                '<h3>Resultados de la prueba</h3>' +
+                '<p class="score">Puntuación: <strong>' + score + '</strong></p>' +
+                '<p class="level">' + stressLevel.level + '</p>' +
+                '<p class="description">' + stressLevel.description + '</p>' +
+                '<p class="recommendation">' + stressLevel.recommendation + '</p>';
 
             // Restablece las respuestas seleccionadas
             document.querySelector('form').reset();

@@ -1,0 +1,466 @@
+/* ============================================================
+   layout.css — Navbar + Footer (fuente única · diseño moderno)
+   Cargar en ÚLTIMO lugar en cada <head> para imponer cascada.
+   ============================================================ */
+
+/* ---------------------- Fuentes ---------------------- */
+/* Montserrat: única familia tipográfica del sitio (navbar, footer y contenido) */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800&display=swap");
+
+:root {
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+  --color-0: #049baed9;
+  --color-1: #1e7898;
+  --color-2: #165a72;
+  --color-3: #0f3c4c;
+  --color-4: #d3eaf2;
+  --color-5: #ffffff;
+  --1-color: #07c2b2;
+  --2-color: #e3bebb;
+  --3-color: #efefef;
+  --font-navbar: "Montserrat", system-ui, sans-serif;
+  --font-logo: "Montserrat";
+  /* Paleta moderna */
+  --c-teal: #0e9a9f;
+  --c-teal-light: #1ec9bd;
+  --c-teal-dark: #0c2f3a;
+  --c-ink: #0f3c4c;
+  --c-soft: #d3eaf2;
+}
+
+/* ---------------------- Base global ---------------------- */
+html { font-size: 16px !important; }
+html, body { overflow-x: hidden; }
+img, video, iframe, svg { max-width: 100%; height: auto; }
+
+/* ---------------------- Tipografía global (consistencia entre páginas) ----------------------
+   Montserrat es la única familia del sitio. !important en headings porque los CSS de
+   cada página declaran fuentes en clases (.titleevalpsi, .description1, etc.) que de
+   otro modo ganarían por especificidad. */
+body, input, textarea, select, button { font-family: "Montserrat", system-ui, -apple-system, sans-serif; }
+a { font-family: inherit; text-decoration: none; }
+.icons a,
+.icons a:hover,
+.icons a:focus,
+.icons a:active {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", system-ui, sans-serif !important;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ============================================================
+   NAVBAR — pill flotante glassmorphism
+   ============================================================ */
+
+.navbar {
+  position: fixed !important;
+  top: 4vh !important;
+  left: 1.4em !important;
+  right: 1.4em !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  box-sizing: border-box !important;
+  font-family: var(--font-navbar) !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.55) !important;
+  border-radius: 20px !important;
+  padding: 14px 26px !important;
+  min-height: 68px !important;
+  height: 68px !important;
+  box-shadow: 0 10px 30px rgba(15, 60, 76, 0.12), 0 2px 8px rgba(15, 60, 76, 0.06) !important;
+  z-index: 50 !important;
+  transition: box-shadow .3s ease, background .3s ease;
+}
+
+/* Logo con degradado */
+.navbar .logo {
+  font-family: var(--font-logo) !important;
+  font-size: 1.9rem !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  letter-spacing: .12em !important;
+  text-decoration: none !important;
+  background: linear-gradient(90deg, var(--c-teal), var(--c-teal-light)) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: var(--c-teal) !important;
+  white-space: nowrap !important;
+  transition: letter-spacing .3s ease, filter .3s ease;
+}
+.navbar .logo:hover {
+  letter-spacing: .18em;
+  filter: drop-shadow(0 2px 6px rgba(14, 154, 159, 0.35));
+}
+
+/* Lista de enlaces */
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+}
+.navbar .nav-links ul {
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+.navbar .nav-links ul li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.navbar .nav-links ul li a:not(.carro) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 15px !important;
+  color: var(--c-ink) !important;
+  font-size: .8rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .08em !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  border-radius: 12px;
+  transition: color .25s ease, background .25s ease, transform .25s ease;
+}
+/* Subrayado animado (no aplica al carrito) */
+.navbar .nav-links ul li a:not(.carro)::after {
+  content: '';
+  position: absolute;
+  left: 15px; right: 15px; bottom: 3px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--c-teal), var(--c-teal-light));
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .3s ease;
+}
+.navbar .nav-links ul li a:not(.carro):hover { color: var(--c-teal); transform: translateY(-1px); }
+.navbar .nav-links ul li a:not(.carro):hover::after { transform: scaleX(1); }
+
+/* Enlace de la página actual (lo añade layout.js) */
+.navbar .nav-links ul li a.active { color: var(--c-teal); }
+.navbar .nav-links ul li a.active::after { transform: scaleX(1); }
+
+/* Botón carrito */
+.nav-links a.carro {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  margin: 0 0 0 .35rem !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, var(--c-teal), var(--c-teal-light)) !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 3px 8px rgba(14, 154, 159, 0.35) !important;
+  transition: background .25s ease, transform .25s ease, box-shadow .25s ease !important;
+}
+.nav-links a.carro:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 14px rgba(14, 154, 159, 0.5) !important;
+}
+.nav-links a.carro img {
+  width: 24px !important;
+  height: 24px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Hamburguesa */
+.navbar .menu-hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--c-ink);
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: background .25s ease, color .25s ease;
+}
+.navbar .menu-hamburger:hover { background: rgba(14, 154, 159, 0.12); color: var(--c-teal); }
+
+/* ============================================================
+   FOOTER — diseño elegante y profesional
+   ============================================================ */
+.footer {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 46px;
+  align-items: flex-start;
+  background:
+    radial-gradient(120% 70% at 50% 0%, rgba(30, 201, 189, 0.20) 0%, transparent 62%),
+    linear-gradient(180deg, #0e9a9f 0%, #0a6f73 46%, #072a30 100%);
+  color: #d8eef0;
+  text-align: left;
+  font-family: var(--font-navbar);
+  font-weight: 400;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  padding: 64px 56px 26px;
+  margin-top: 32px;
+  border-radius: 40px 40px 0 0;
+  box-shadow: 0 -18px 55px rgba(7, 42, 48, 0.30);
+}
+/* Línea de acento superior con brillo */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(30, 201, 189, .9), #ffffff, rgba(30, 201, 189, .9), transparent);
+  box-shadow: 0 0 20px rgba(30, 201, 189, .55);
+}
+/* Barra inferior (copyright) — vía ::after, sin tocar el HTML */
+.footer::after {
+  content: '© 2026 Serotonina · Bienestar emocional a tu alcance';
+  flex-basis: 100%;
+  order: 99;
+  margin-top: 10px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, .14);
+  text-align: center;
+  font-size: 12.5px;
+  letter-spacing: .04em;
+  color: rgba(216, 238, 240, .55);
+}
+
+/* Columnas */
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.footer .footer-left  { flex: 1.35; padding-right: 16px; }
+.footer .footer-center { flex: 1; padding: 0 10px; }
+.footer .footer-right { flex: 1.05; align-items: center; text-align: center; }
+
+/* Bloque "Acerca" */
+.footer .about {
+  font-size: 15px !important;
+  line-height: 1.75 !important;
+  color: #cce8ea;
+  font-weight: 400;
+  margin: 0;
+}
+.footer .about span {
+  display: block;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #2fd9cd;
+  margin-bottom: 14px;
+}
+.footer .about span::after {
+  content: '';
+  display: block;
+  width: 34px;
+  height: 2px;
+  margin-top: 9px;
+  background: linear-gradient(90deg, #2fd9cd, transparent);
+  border-radius: 2px;
+}
+
+/* Contacto */
+.footer .footer-center div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.footer .footer-center i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+  font-size: 16px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .14);
+  transition: background .3s ease, transform .3s ease, box-shadow .3s ease;
+}
+.footer .footer-center div:hover i {
+  background: rgba(30, 201, 189, .40);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(30, 201, 189, .40), inset 0 0 0 1px rgba(255, 255, 255, .28);
+}
+.footer .footer-center p { margin: 0; color: #d8eef0; font-size: 14px !important; line-height: 1.4 !important; }
+.footer .footer-center p a { color: #d8eef0; text-decoration: none; transition: color .25s ease; }
+.footer .footer-center p a:hover { color: #ffffff; }
+
+/* Marca + enlaces */
+.footer-right .titlefooter,
+.footer-right h2 {
+  font-family: var(--font-logo);
+  font-weight: 800;
+  font-size: 2.1rem;
+  letter-spacing: .12em;
+  margin: 0 0 6px;
+  background: linear-gradient(90deg, #ffffff 0%, #9fe9e3 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffffff;
+  filter: drop-shadow(0 2px 8px rgba(30, 201, 189, .35));
+}
+.footer-right .titlefooter::after,
+.footer-right h2::after {
+  content: 'Psicología & Bienestar';
+  display: block;
+  font-family: var(--font-navbar);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  -webkit-text-fill-color: rgba(216, 238, 240, .6);
+  color: rgba(216, 238, 240, .6);
+  margin-top: 10px;
+  filter: none;
+}
+
+.footer .menu {
+  margin: 18px 0 0;
+  padding: 0;
+  font-size: 0;            /* oculta los separadores "|" */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  justify-content: center;
+}
+.footer .menu a {
+  font-size: 14px !important;
+  font-weight: 500;
+  color: #d8eef0;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color .25s ease;
+}
+.footer .menu a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: #2fd9cd;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .3s ease;
+}
+.footer .menu a:hover { color: #ffffff; }
+.footer .menu a:hover::after { transform: scaleX(1); }
+
+/* ============================================================
+   NAVBAR MÓVIL — panel deslizante glassmorphism
+   ============================================================ */
+@media screen and (max-width: 750px) {
+  .navbar { padding: 10px 16px; border-radius: 16px; height: auto !important; min-height: 0 !important; }
+  .navbar .logo { font-size: 1.4rem; }
+
+  .navbar .menu-hamburger { display: block; }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(78%, 320px);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    box-shadow: -12px 0 40px rgba(15, 60, 76, 0.20);
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(110%);
+    transition: transform .4s cubic-bezier(.16, 1, .3, 1);
+    z-index: 60;
+  }
+  .nav-links.mobile-menu { transform: translateX(0); }
+
+  .nav-links ul { flex-direction: column; gap: 1.3rem; }
+  .navbar .nav-links ul li a {
+    font-size: 1.02rem;
+    padding: 10px 18px;
+  }
+  .navbar .nav-links ul li a:not(.carro)::after { left: 18px; right: 18px; }
+  .nav-links a.carro { margin-left: 0; margin-top: .5rem; }
+}
+
+/* ============================================================
+   FOOTER RESPONSIVE
+   ============================================================ */
+@media (max-width: 879px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 34px;
+    padding: 52px 26px 24px;
+    border-radius: 32px 32px 0 0;
+  }
+  .footer .footer-right { order: 1; }
+  .footer .footer-center { order: 2; }
+  .footer .footer-left  { order: 3; }
+  .footer .footer-left,
+  .footer .footer-center,
+  .footer .footer-right {
+    width: 100%;
+    max-width: 460px;
+    align-items: center;
+    padding: 0;
+  }
+  .footer .about { text-align: center; }
+  .footer .about span::after { margin-left: auto; margin-right: auto; }
+  .footer-center div { justify-content: center; }
+  .footer-right .titlefooter, .footer-right h2 { font-size: 1.8rem; }
+}
+
+@media (max-width: 600px) {
+  .footer .menu { gap: 8px 16px; }
+  .footer .about { font-size: 14px; }
+  .footer .footer-center i { flex: 0 0 38px; width: 38px; height: 38px; font-size: 14px; }
+  .footer p, .footer .menu a { overflow-wrap: anywhere; word-break: break-word; }
+}
+
+/* ============================================================
+   REGLAS ESTRUCTURALES (mantener)
+   ============================================================ */
+/* Icono hamburguesa (<i>): tamaño/color base */
+.menu-hamburger { font-size: 1.5rem; color: var(--c-ink); }
+
+/* Sub-nav .card del área de usuario debajo del navbar flotante
+   (sólo <header> con .card: publicaciones, agendar, testsection, prueba_*) */
+header:has(> .card) > .card { margin-top: calc(4vh + 100px); }
+header:has(> .card) { margin: 0 !important; padding: 0 !important; }

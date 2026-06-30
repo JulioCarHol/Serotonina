@@ -1,536 +1,256 @@
-/* ---------------------- Colores y Fuentes -------------------- */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
-/*navbar */
-@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
-/*icono*/
-@import url("https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap");
-/* footer: font-family: 'Text Me One', sans-serif; */
-@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
-/* title body: font-family: 'Mochiy Pop P One', sans-serif;*/
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Titillium+Web:wght@200;300;400;600;700&display=swap');
+/* ============================================================
+   agendar.css — Página de agendamiento (modernizada)
+   Paleta y tipografía alineadas con layout.css / carrito.css
+   ============================================================ */
 
 :root {
-    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
-    --color-0: #049baed9;
-    --color-1: #1e7898;
-    --color-2: #165a72;
-    --color-3: #0f3c4c;
-    --color-4: #d3eaf2;
-    --color-5: #ffffff;
-    /* Nuevas variables para el footer, copiadas de contacto.css */
-    --font-navbar: "Montserrat", sans-serif;
-    --font-logo: "Montserrat";
-    --1-color: #07c2b2;
-    --2-color: #e3bebb;
-    --3-color: #efefef;
+  --shadow-sm: 0 2px 8px rgba(15, 60, 76, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 60, 76, 0.10);
+  --shadow-lg: 0 18px 40px rgba(15, 60, 76, 0.15);
+  --radius: 18px;
 }
 
-/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
-    font-family: var(--font);
-    font-weight: 600;
-    background-image: url(https://i.ibb.co/fH2kDYs/Naranja-Negocios-Servicios-Sitio-Web-4.png);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e3f2f4 100%);
+  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  color: var(--c-ink);
 }
 
+.content-wrapper {
+  flex: 1;
+}
+
+/* ---------------------- Header + tarjetas de navegación ---------------------- */
 header {
-    display: flex;
-    justify-content: space-between;
-}
-
-h1 {
-    color: #0f3c4c;
-    margin-left: 2vh;
-}
-
-h2 {
-    color: #0f3c4c;
-    margin-left: 3vh;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: calc(4vh + 100px);
+  margin-bottom: 30px;
+  padding: 0 24px;
 }
 
 .card {
-    background-color: rgba(0, 221, 255, 0.458);
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, box-shadow 0.3s;
-    width: 200px;
-    height: 50px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius);
+  padding: 16px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  flex: 1 1 280px;
+  max-width: 360px;
 }
-
 .card:hover {
-    background-color: rgba(0, 174, 201, 0.458);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(14, 154, 159, 0.35);
 }
-
 .card a {
-    text-decoration: none;
-    color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: var(--c-ink);
 }
-
 .card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: var(--c-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.card h3 i {
+  color: var(--c-teal);
+  font-size: 1rem;
 }
 
-/* Estilos para el formulario de agendamiento */
+/* ---------------------- Títulos ---------------------- */
+h1 {
+  color: var(--c-ink);
+  margin: 10px 0 24px 1.4em;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+}
+
+#serviciosAdquiridos > h2,
+#formularioAgendamiento > h2 {
+  color: var(--c-ink);
+  margin-left: 1.4em;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+/* ---------------------- Servicios adquiridos (lista) ---------------------- */
+#serviciosAdquiridos {
+  max-width: 760px;
+  margin: 0 auto 50px;
+  padding: 0 24px;
+}
+#listaServicios {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#listaServicios li {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(14, 154, 159, 0.15);
+  border-left: 4px solid var(--c-teal);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: .95rem;
+  font-weight: 500;
+  color: var(--c-ink);
+  box-shadow: var(--shadow-sm);
+}
+#listaServicios li:empty {
+  display: none;
+}
+
+/* ---------------------- Formulario de agendamiento ---------------------- */
 #formularioAgendamiento {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    justify-content: center;
+  max-width: 480px;
+  margin: 0 auto 60px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+#formularioAgendamiento > h2 {
+  text-align: center;
+  color: var(--c-teal);
+  margin: 0 0 24px;
 }
 
-#formularioAgendamiento h2 {
-    font-size: 24px;
-    color: var(--color-0);
-    margin-bottom: 20px;
-    text-align: center;
+#formularioAgendamiento form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 #formularioAgendamiento label {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--color-3);
-    font-weight: bold;
-    /* Limitar el ancho de los labels */
-    max-width: 100%;
-    overflow-wrap: break-word;
+  display: block;
+  font-size: .8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--c-ink);
+  opacity: .7;
+  margin-bottom: 6px;
 }
 
-#formularioAgendamiento input[type="text"],
 #formularioAgendamiento input[type="date"],
-#formularioAgendamiento input[type="time"] {
-    width: 96%;
-    padding: 10px;
-    border: 1px solid var(--color-3);
-    border-radius: 5px;
-}
-
-/* Estilos para el select del formulario de agendamiento */
+#formularioAgendamiento input[type="time"],
 #formularioAgendamiento select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid var(--color-3);
-    border-radius: 5px;
-    appearance: none;
-    background: transparent;
+  width: 100%;
+  border: 1.5px solid rgba(14, 154, 159, 0.2);
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: .95rem;
+  font-weight: 400;
+  color: var(--c-ink);
+  height: 46px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.7);
+  transition: border-color .2s ease, box-shadow .2s ease;
 }
-
-#formularioAgendamiento select option {
-    color: var(--color-3);
-    background-color: var(--color-5);
+#formularioAgendamiento input:focus,
+#formularioAgendamiento select:focus {
+  border-color: var(--c-teal);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(14, 154, 159, 0.12);
 }
-
-#formularioAgendamiento select::after {
-    content: '\f078';
-    font-family: 'Font Awesome 6 Solid', sans-serif;
-    font-size: 14px;
-    color: var(--color-3);
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-    pointer-events: none;
+#formularioAgendamiento input::placeholder {
+  color: var(--c-ink);
+  opacity: .4;
+}
+#formularioAgendamiento select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%230e9a9f' d='M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
+  padding-right: 40px;
 }
 
 #formularioAgendamiento button[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: var(--color-1);
-    color: var(--color-4);
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
+  border: none;
+  background: linear-gradient(135deg, var(--c-teal), var(--c-teal-light));
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  padding: 16px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(14, 154, 159, 0.3);
+  transition: transform .25s ease, box-shadow .25s ease;
+  margin-top: 8px;
 }
-
 #formularioAgendamiento button[type="submit"]:hover {
-    background-color: var(--color-2);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(14, 154, 159, 0.4);
+}
+#formularioAgendamiento button[type="submit"]:active {
+  transform: translateY(0);
 }
 
-/* --------- Footer actualizado (igual que en contacto.css) --------- */
-.footer {
-    background-color: #0e9a9f;
-    width: 100%;
-    text-align: left;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 50px;
-    margin-top: 20px;
-    display: flex;
-    border-radius: 40px 40px 0 0;
-    box-shadow: 0 0 40px rgba(198, 139, 128, 0.2);
-    box-sizing: border-box; /* Añadir esta línea */
-    max-width: 100%; /* Añadir esta línea */
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media screen and (max-width: 900px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: calc(4vh + 90px);
+  }
+  .card {
+    max-width: 100%;
+  }
+  h1 {
+    margin-left: .8em;
+  }
+  #serviciosAdquiridos > h2,
+  #formularioAgendamiento > h2 {
+    margin-left: .8em;
+  }
 }
 
-.footer .footer-left,
-.footer .footer-center,
-.footer .footer-right {
-    display: inline-block;
-    vertical-align: top;
-    font-family: sans-serif;
-}
-
-.footer .footer-left {
-    width: 33%;
-    padding-right: 25px;
-}
-
-.footer .about {
-    line-height: 20px;
-    color: #f8f8f7;
-    font-size: 19px;
-    font-weight: 700;
-    margin: auto;
-    font-family: var(--font-navbar);
-    text-wrap: balance;
-    text-align: center;
-}
-
-.footer .about span {
-    /* título acerca */
-    display: block;
-    color: #f3f2f2;
-    font-size: 30px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.menu a {
-    display: flex;
-    align-items: center;
-}
-
-.footer .icons {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-}
-
-.footer .icons a {
-    /* iconos redes */
-    display: inline-block;
-    width: 45px;
-    height: 40px;
-    cursor: pointer;
-    background-color: #0e9a9f;
-    border-radius: 2px;
-    font-size: 25px;
-    color: #fffaf9;
-    text-align: center;
-    line-height: 35px;
-    margin-right: 3px;
-    margin-bottom: 5px;
-}
-
-.footer .footer-center {
-    width: 30%;
-    padding-left: 50px;
-}
-
-.footer .footer-center i {
-    /* iconos dirección, ubicación */
-    background-color: #f8f7f6;
-    color: #0bc1b4;
-    font-size: 25px;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 42px;
-    margin: 10px 15px;
-    vertical-align: middle;
-}
-
-.footer .footer-center i.fa-envelope {
-    font-size: 17px;
-    line-height: 38px;
-}
-
-.footer .footer-center p {
-    /* dirección / número */
-    display: inline-block;
-    font-family: var(--font-navbar);
-    color: #f8f4f1;
-    vertical-align: middle;
-    margin: 0;
-    letter-spacing: 2px;
-}
-
-.footer .footer-center p span {
-    display: block;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 2;
-}
-
-.footer .footer-center p a {
-    /* contacto */
-    color: #e7e3e0;
-    text-decoration: none;
-    font-family: var(--font-navbar);
-}
-
-.footer .footer-right {
-    width: 35%;
-}
-
-.footer-right h2 {
-    color: #f6f4f3;
-    font-size: 36px;
-    font-weight: bolder;
-    margin: 0;
-    font-family: var(--font-navbar);
-    text-align: center;
-}
-
-.footer-right .titlefooter {
-    color: var(--2-color);
-    font-weight: bolder;
-    font-size: 40px;
-}
-
-.footer .menu {
-    /* Nombre/logo footer */
-    color: #f7f2ef;
-    font-family: var(--font-navbar);
-    margin: 20px 0 12px;
-    padding: 0;
-    font-size: 25px;
-    text-align: center;
-}
-
-.footer .menu a {
-    display: inline-block;
-    line-height: 1;
-    text-decoration: none;
-    color: inherit;
-}
-
-.footer .menu a:hover {
-    color: #fef8f7;
-}
-
-/* Media queries tomadas también de contacto.css para el footer */
-
-@media (max-width: 879px) {
-    .footer-left {
-        width: 80%;
-    }
-    
-    .footer-right .menu {
-        font-size: 18px;
-    }
-    
-    .footer .footer-center {
-        display: flex;
-        flex-direction: row;
-        font-size: 10px;
-        justify-content: center;
-        width: 400px;
-    }
-    
-    footer {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .footer .footer-right {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .footer-right .menu {
-        width: 500px;
-        flex-wrap: nowrap;
-        align-items: center;
-    }
-    
-    .footer .footer-center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 400px;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        font-size: 9px;
-        padding-left: 0;
-        margin: 5px 10px;
-    }
-    
-    .footer .footer-center div {
-        justify-content: center;
-        align-items: center;
-        width: calc(90% / 3);
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .footer .footer-left {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 500px;
-        margin-top: 40px;
-        padding-right: 0;
-    }
-    
-    .footer-left p {
-        display: flex;
-        align-items: center;
-    }
-    
-    .footer .footer-left .about {
-        display: flex;
-        flex-direction: column;
-        margin: auto;
-        justify-content: center;
-        width: 350px;
-        font-size: 17px;
-    }
-}
-
-@media (min-width: 1050px) and (max-width: 1229px) {
-    footer {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .footer .footer-right {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .footer-right .menu {
-        width: 500px;
-        flex-wrap: nowrap;
-        align-items: center;
-    }
-    
-    .footer .footer-center {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 720px;
-        flex-direction: row;
-        flex-wrap: nowrap;
-    }
-    
-    .footer .footer-center div {
-        justify-content: center;
-        align-items: center;
-        width: 500px;
-        display: flex;
-        flex-direction: column;
-        margin: 10px 20px;
-        padding-left: 0;
-    }
-    
-    .footer .footer-left {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 500px;
-        margin-top: 40px;
-        padding-right: 0;
-    }
-    
-    .footer-left p {
-        display: flex;
-        align-items: center;
-    }
-    
-    .footer .footer-left .about {
-        display: flex;
-        flex-direction: column;
-        margin: auto;
-        justify-content: center;
-    }
-}
-
-/* Estilos responsivos */
-@media screen and (max-width: 767px) {
-    #formularioAgendamiento {
-        max-width: 90%;
-        padding: 10px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #formularioAgendamiento h2 {
-        font-size: 20px;
-    }
-
-    #formularioAgendamiento label {
-        font-size: 14px;
-    }
-
-    #formularioAgendamiento input[type="text"],
-    #formularioAgendamiento input[type="date"],
-    #formularioAgendamiento input[type="time"] {
-        width: 90%;
-        padding: 8px;
-    }
-
-    #formularioAgendamiento select {
-        width: 93%;
-    }
-
-    #formularioAgendamiento button[type="submit"] {
-        width: 93%;
-        padding: 12px;
-        font-size: 14px;
-        margin-top: 10px;
-    }
-
-    .footer {
-        padding: 10px 7%;
-    }
-}
-
-/* Estilos para tablets */
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 10px;
-    }
-
-    .card {
-        width: 180px;
-    }
-
-    .card h3 {
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-
-    #formularioAgendamiento {
-        max-width: 70%;
-        padding: 15px;
-    }
-
-    #formularioAgendamiento h2 {
-        font-size: 22px;
-    }
-
-    .footer {
-        padding: 20px 9%;
-    }
+@media screen and (max-width: 600px) {
+  #formularioAgendamiento {
+    padding: 22px;
+    margin: 0 16px 40px;
+  }
+  #serviciosAdquiridos {
+    padding: 0 16px;
+  }
 }

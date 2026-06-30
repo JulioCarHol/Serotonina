@@ -3,15 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tablero de Usuario</title>
-  <link rel="icon" href="navbar/NewLogo.png" type="image/gif">
+  <link rel="icon" href="navbar/NewLogo.png" type="image/x-icon">
   <link rel="stylesheet" href="css/panelusuario.css">
-  <link rel="stylesheet" href="css/hdft-panel.css">
-  <script src="https://kit.fontawesome.com/6064d08d69.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Tablero de Usuario</title>
+  <link rel="stylesheet" href="css/layout.css">
 </head>
 
 <body>
@@ -23,11 +23,10 @@
         <li><a href="servicios.html">SERVICIOS</a></li>
         <li><a href="nosotros.html">NOSOTROS</a></li>
         <li><a href="contacto.html">CONTÁCTANOS</a></li>
-        <li><a href="carrito.html" class="carro">
-            <img src="navbar/CC.png"></a></li>
+        <li><a href="carrito.html" class="carro"><img src="navbar/CC.png" alt="Carrito"></a></li>
       </ul>
     </div>
-    <img src="navbar/588a64e0d06f6719692a2d10.png" alt="" class="menu-hamburger">
+    <i class="fa-solid fa-bars menu-hamburger"></i>
   </nav>
 
   <div class="icons"> <!--Estos son los iconos de redes-->
@@ -49,7 +48,7 @@
       <h2>Perfil</h2>
       <div class="content-container">
         <div class="icon-container">
-          <img src="img/panel/perfil-del-usuario.png" alt="" class="icon">
+          <img src="img/panel/perfil-del-usuario.png" alt="Icono de perfil" class="icon">
         </div>
         <ul>
           <li id="name-li">Nombre: </li>
@@ -64,7 +63,7 @@
       <h2>Citas</h2>
       <div class="content-container">
         <div class="icon-container">
-          <img src="img/panel/cita-medica.png" alt="" class="icon">
+          <img src="img/panel/cita-medica.png" alt="Icono de cita médica" class="icon">
         </div>
         <ul id="citas-list">
         </ul>
@@ -76,7 +75,7 @@
       <h2>Sección de Publicaciones</h2>
       <div class="content-container">
         <div class="icon-container">
-          <img src="img/panel/marketing-global.png" alt="" class="icon">
+          <img src="img/panel/marketing-global.png" alt="Icono de publicaciones" class="icon">
         </div>
         <p>Explora y publica nuevo contenido sobre salud mental.</p>
         <a href="publicaciones.html">Ir a sección</a>
@@ -87,7 +86,7 @@
       <h2>Pruebas Psicológicas</h2>
       <div class="content-container">
         <div class="icon-container">
-          <img src="img/panel/examen.png" alt="" class="icon">
+          <img src="img/panel/examen.png" alt="Icono de pruebas psicológicas" class="icon">
         </div>
         <p>Explora y evalua diferentes aspectos de tu bienestar emocional,
           <br> cognitivo y psicológico.
@@ -100,7 +99,7 @@
       <h2>Historial</h2>
       <div class="content-container">
         <div class="icon-container">
-          <img src="img/panel/lista-de-verificacion.png" alt="" class="icon">
+          <img src="img/panel/lista-de-verificacion.png" alt="Icono de historial" class="icon">
         </div>
         <ul>
           <li>Fecha:</li>
@@ -116,7 +115,7 @@
       <h2>Configuración</h2>
       <div class="content-container">
         <div class="icon-container">
-          <img src="img/panel/configuracion-del-navegador.png" alt="" class="icon">
+          <img src="img/panel/configuracion-del-navegador.png" alt="Icono de configuración" class="icon">
         </div>
         <p>Aquí puedes personalizar tus preferencias y configuraciones de la cuenta.</p>
         <a href="#">Editar configuración</a>
@@ -132,26 +131,23 @@
       capacitados. Accede a terapia en línea y experimenta los beneficios durante una prueba gratuita de 30 días,
       promoviendo tu bienestar sin compromiso financiero.
     </p>
-
   </div>
-
-  <div class="footer-center col-md-4 col-sm-6">
+  <div class="footer-center">
     <div>
       <i class="fa fa-map-marker"></i>
       <p>Bogota, Colombia</p>
     </div>
     <div>
       <i class="fa fa-phone"></i>
-      <p> (+57) 0000 000 000</p>
+      <p>(+57) 0000 000 000</p>
     </div>
     <div>
       <i class="fa fa-envelope"></i>
       <p><a href="#">contacto&#64;serotonina.com</a></p>
     </div>
   </div>
-
   <div class="footer-right">
-    <h2 clas="titlefooter">Serotonina</h2>
+    <h2 class="titlefooter">Serotonina</h2>
     <p class="menu">
       <a href="index.html"> Inicio</a> |
       <a href="servicios.html"> Servicios</a> |
@@ -161,16 +157,9 @@
   </div>
 </footer>
 
-  <script>
-    const menuHamburger = document.querySelector(".menu-hamburger")
-    const navLinks = document.querySelector(".nav-links")
+  <script src="js/panelusuario.js" defer></script>
 
-    menuHamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('mobile-menu')
-    })
-  </script>
-  <script src="js/panelusuario.js"></script>
-
+  <script src="js/layout.js" defer></script>
 </body>
 
 </html>

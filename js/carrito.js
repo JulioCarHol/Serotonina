@@ -2,10 +2,7 @@
 /*                                FUNCIONALIDAD CARRITO DE COMPRAS                                */
 /* ---------------------------------------------------------------------------------------------- */
 
-// Variable que mantiene el estado visible del carrito
-let carritoVisible = false;
-
-// Esperemos que todos los elementos de la página cargen para ejecutar el script
+// Esperamos que todos los elementos de la página carguen para ejecutar el script
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
@@ -16,45 +13,42 @@ function ready() {
     // Cargamos los elementos del carrito del Local Storage al cargar la página
     cargarCarritoDesdeLocalStorage();
 
-    //Agregremos funcionalidad a los botones eliminar del carrito
+    // Agregamos funcionalidad a los botones eliminar del carrito ya existentes
     let botonesEliminarItem = document.getElementsByClassName('btn-eliminar');
     for (let i = 0; i < botonesEliminarItem.length; i++) {
-        let button = botonesEliminarItem[i];
-        button.addEventListener('click', eliminarItemCarrito);
+        botonesEliminarItem[i].addEventListener('click', eliminarItemCarrito);
     }
 
-    //Agrego funcionalidad al boton sumar cantidad
+    // Agregamos funcionalidad al botón sumar cantidad
     let botonesSumarCantidad = document.getElementsByClassName('sumar-cantidad');
     for (let i = 0; i < botonesSumarCantidad.length; i++) {
-        var button = botonesSumarCantidad[i];
-        button.addEventListener('click', sumarCantidad);
+        botonesSumarCantidad[i].addEventListener('click', sumarCantidad);
     }
 
-    //Agrego funcionalidad al buton restar cantidad
+    // Agregamos funcionalidad al botón restar cantidad
     let botonesRestarCantidad = document.getElementsByClassName('restar-cantidad');
     for (let i = 0; i < botonesRestarCantidad.length; i++) {
-        let button = botonesRestarCantidad[i];
-        button.addEventListener('click', restarCantidad);
+        botonesRestarCantidad[i].addEventListener('click', restarCantidad);
     }
 
-    // Agregamos funcionalidad al botón Agregar al carrito (modificado)
+    // Agregamos funcionalidad al botón Agregar al carrito
     let botonesAgregarAlCarrito = document.getElementsByClassName('boton-item');
     for (let i = 0; i < botonesAgregarAlCarrito.length; i++) {
-        let button = botonesAgregarAlCarrito[i];
-        button.addEventListener('click', agregarAlCarritoClicked);
+        botonesAgregarAlCarrito[i].addEventListener('click', agregarAlCarritoClicked);
     }
 
-    // Agregamos funcionalidad al botón comprar (modificado)
-    document.getElementsByClassName('btn-pagar')[0].addEventListener('click', function () {
-        pagarClicked();
-    });
+    // Agregamos funcionalidad al botón pagar
+    document.getElementsByClassName('btn-pagar')[0].addEventListener('click', pagarClicked);
+
+    // Sincronizamos el estado visual de los botones de producto con el carrito cargado
+    actualizarEstadoBotonesProductos();
 }
 
 function cargarCarritoDesdeLocalStorage() {
     let carrito = JSON.parse(localStorage.getItem('carrito'));
     if (carrito) {
         carrito.forEach(item => {
-            agregarItemAlCarrito(item.titulo, item.precio, item.imagenSrc, item.esServicio);
+            agregarItemAlCarrito(item.titulo, item.precio, item.imagenSrc, item.esServicio, false);
         });
     }
 }
@@ -69,36 +63,15 @@ function guardarCarritoEnLocalStorage() {
         let titulo = item.getElementsByClassName('carrito-item-titulo')[0].innerText;
         let precio = item.getElementsByClassName('carrito-item-precio')[0].innerText;
         let imagenSrc = item.getElementsByTagName('img')[0].src;
-        let esServicio = item.getAttribute('data-es-servicio') === "true"; // Agregar esServicio aquí
+        let esServicio = item.getAttribute('data-es-servicio') === "true";
 
-        let itemCarrito = {
-            titulo: titulo,
-            precio: precio,
-            imagenSrc: imagenSrc,
-            esServicio: esServicio // Agregar esServicio al objeto
-        };
-        carrito.push(itemCarrito);
+        carrito.push({ titulo, precio, imagenSrc, esServicio });
     }
 
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-function agregarItemAlCarrito(titulo, precio, imagenSrc, esServicio) {
-    let item = document.createElement('div');
-    item.classList.add('item');
-    // Aquí ajustamos el atributo data-es-servicio como un valor booleano
-    item.setAttribute('data-es-servicio', esServicio);
-
-    let itemsCarrito = document.getElementsByClassName('carrito-items')[0];
-
-    // Actualizamos total
-    actualizarTotalCarrito();
-
-    // Guardamos el carrito en el Local Storage después de agregar un elemento
-    guardarCarritoEnLocalStorage();
-}
-
-// Eliminamos todos los elementos del carrito y lo ocultamos (modificado)
+// Vaciamos el carrito tras pagar
 function pagarClicked() {
     Swal.fire({
         title: "Gracias por la compra",
@@ -106,173 +79,152 @@ function pagarClicked() {
         confirmButtonText: "Aceptar"
     });
 
-    // Vaciamos el carrito en la interfaz gráfica
     let carritoItems = document.getElementsByClassName('carrito-items')[0];
     while (carritoItems.hasChildNodes()) {
         carritoItems.removeChild(carritoItems.firstChild);
     }
 
-    // Actualizamos total
     actualizarTotalCarrito();
+    actualizarEstadoBotonesProductos();
+    guardarCarritoEnLocalStorage();
 
-    // Ocultamos el carrito
-    ocultarCarrito();
-
-    // Redirigir a la página "agendar.html" después de completar el pago con un retraso de 2 segundos
     setTimeout(function () {
         window.location.href = "agendar.html";
-    }, 2000); // 2000 milisegundos = 2 segundos
+    }, 2000);
 }
 
 function agregarAlCarritoClicked(event) {
     let button = event.target;
-    let item = button.parentElement;
+    let item = button.closest('.item');
     let titulo = item.getElementsByClassName('titulo-item')[0].innerText;
     let precio = item.getElementsByClassName('precio-item')[0].innerText;
     let imagenSrc = item.getElementsByClassName('img-item')[0].src;
-    let esServicio = item.getAttribute('data-es-servicio'); // No es necesario convertirlo a booleano aquí.
+    let esServicio = item.getAttribute('data-es-servicio') === "true";
 
-    agregarItemAlCarrito(titulo, precio, imagenSrc, esServicio === "true"); // Convertimos a booleano al pasar el argumento.
-    hacerVisibleCarrito();
-    // Guardamos el carrito actualizado en el Local Storage
-    guardarCarritoEnLocalStorage();
+    agregarItemAlCarrito(titulo, precio, imagenSrc, esServicio, true);
 }
 
-//Funcion que hace visible el carrito
-function hacerVisibleCarrito() {
-    carritoVisible = true;
-    var carrito = document.getElementsByClassName('carrito')[0];
-    carrito.style.marginRight = '0';
-    carrito.style.opacity = '1';
-
-    var items = document.getElementsByClassName('contenedor-items')[0];
-    items.style.width = '60%';
-}
-
-//Funciòn que agrega un item al carrito
-function agregarItemAlCarrito(titulo, precio, imagenSrc, esServicio) {
-    let item = document.createElement('div');
-    item.classList.add('item'); // Corregimos el método add, no es una asignación.
+// Agrega un item al carrito. `mostrarAlerta` distingue un click del usuario (true) de una carga desde LS (false)
+function agregarItemAlCarrito(titulo, precio, imagenSrc, esServicio, mostrarAlerta) {
     let itemsCarrito = document.getElementsByClassName('carrito-items')[0];
 
-    // Controlamos que el item que intenta ingresar no se encuentre en el carrito
+    // Evitamos duplicados
     let nombresItemsCarrito = itemsCarrito.getElementsByClassName('carrito-item-titulo');
     for (let i = 0; i < nombresItemsCarrito.length; i++) {
         if (nombresItemsCarrito[i].innerText === titulo) {
-            Swal.fire({
-                title: "El item ya se encuentra en el carrito",
-                icon: "warning",
-                confirmButtonText: "Aceptar"
-            });
+            if (mostrarAlerta) {
+                Swal.fire({
+                    title: "El item ya se encuentra en el carrito",
+                    icon: "warning",
+                    confirmButtonText: "Aceptar"
+                });
+            }
             return;
         }
     }
 
-    var itemCarritoContenido = `
-        <div class="carrito-item">
-            <img src="${imagenSrc}" width="80px" alt="">
-            <div class="carrito-item-detalles">
-                <span class="carrito-item-titulo">${titulo}</span>
-                <div class="selector-cantidad">
-                    <i class="fa-solid fa-minus restar-cantidad"></i>
-                    <input type="text" value="1" class="carrito-item-cantidad" disabled>
-                    <i class="fa-solid fa-plus sumar-cantidad"></i>
-                </div>
-                <span class="carrito-item-precio">${precio}</span>
+    let item = document.createElement('div');
+    item.classList.add('carrito-item');
+    item.setAttribute('data-es-servicio', esServicio);
+    item.innerHTML = `
+        <img src="${imagenSrc}" alt="">
+        <div class="carrito-item-detalles">
+            <span class="carrito-item-titulo">${titulo}</span>
+            <div class="selector-cantidad">
+                <i class="fa-solid fa-minus restar-cantidad"></i>
+                <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                <i class="fa-solid fa-plus sumar-cantidad"></i>
             </div>
-            <button class="btn-eliminar">
-                <i class="fa-solid fa-trash"></i>
-            </button>
+            <span class="carrito-item-precio">${precio}</span>
         </div>
-    `
-    item.innerHTML = itemCarritoContenido;
+        <button class="btn-eliminar" title="Eliminar">
+            <i class="fa-solid fa-trash"></i>
+        </button>
+    `;
     itemsCarrito.append(item);
 
-    // Agregamos la funcionalidad eliminar al nuevo item
+    // Listeners del nuevo item
     item.getElementsByClassName('btn-eliminar')[0].addEventListener('click', eliminarItemCarrito);
+    item.getElementsByClassName('restar-cantidad')[0].addEventListener('click', restarCantidad);
+    item.getElementsByClassName('sumar-cantidad')[0].addEventListener('click', sumarCantidad);
 
-    // Agregamos la funcionalidad restar cantidad del nuevo item
-    let botonRestarCantidad = item.getElementsByClassName('restar-cantidad')[0];
-    botonRestarCantidad.addEventListener('click', restarCantidad);
-
-    // Agregamos la funcionalidad sumar cantidad del nuevo item
-    let botonSumarCantidad = item.getElementsByClassName('sumar-cantidad')[0];
-    botonSumarCantidad.addEventListener('click', sumarCantidad);
-
-    // Actualizamos total
     actualizarTotalCarrito();
-
-    // Guardamos el carrito en el Local Storage después de agregar un elemento
+    actualizarEstadoBotonesProductos();
     guardarCarritoEnLocalStorage();
 }
-//Aumento en uno la cantidad del elemento seleccionado
+
+// Aumenta en uno la cantidad del elemento seleccionado
 function sumarCantidad(event) {
-    var buttonClicked = event.target;
-    var selector = buttonClicked.parentElement;
-    console.log(selector.getElementsByClassName('carrito-item-cantidad')[0].value);
-    var cantidadActual = selector.getElementsByClassName('carrito-item-cantidad')[0].value;
-    cantidadActual++;
-    selector.getElementsByClassName('carrito-item-cantidad')[0].value = cantidadActual;
+    let selector = event.target.closest('.selector-cantidad');
+    let input = selector.getElementsByClassName('carrito-item-cantidad')[0];
+    input.value = parseInt(input.value) + 1;
     actualizarTotalCarrito();
 }
-//Resto en uno la cantidad del elemento seleccionado
+
+// Resta en uno la cantidad del elemento seleccionado
 function restarCantidad(event) {
-    let buttonClicked = event.target;
-    let selector = buttonClicked.parentElement;
-    console.log(selector.getElementsByClassName('carrito-item-cantidad')[0].value);
-    let cantidadActual = selector.getElementsByClassName('carrito-item-cantidad')[0].value;
-    cantidadActual--;
-    if (cantidadActual >= 1) {
-        selector.getElementsByClassName('carrito-item-cantidad')[0].value = cantidadActual;
+    let selector = event.target.closest('.selector-cantidad');
+    let input = selector.getElementsByClassName('carrito-item-cantidad')[0];
+    let cantidad = parseInt(input.value) - 1;
+    if (cantidad >= 1) {
+        input.value = cantidad;
         actualizarTotalCarrito();
     }
 }
 
-//Elimino el item seleccionado del carrito
+// Elimina el item seleccionado del carrito
 function eliminarItemCarrito(event) {
-    let buttonClicked = event.target;
-    buttonClicked.parentElement.parentElement.remove();
-    //Actualizamos el total del carrito
+    let item = event.target.closest('.carrito-item');
+    if (item) item.remove();
     actualizarTotalCarrito();
-
-    //la siguiente funciòn controla si hay elementos en el carrito
-    //Si no hay elimino el carrito
-    ocultarCarrito();
+    actualizarEstadoBotonesProductos();
+    guardarCarritoEnLocalStorage();
 }
-//Funciòn que controla si hay elementos en el carrito. Si no hay oculto el carrito.
-function ocultarCarrito() {
-    let carritoItems = document.getElementsByClassName('carrito-items')[0];
-    if (carritoItems.childElementCount == 0) {
-        let carrito = document.getElementsByClassName('carrito')[0];
-        carrito.style.marginRight = '-100%';
-        carrito.style.opacity = '0';
-        carritoVisible = false;
 
-        let items = document.getElementsByClassName('contenedor-items')[0];
-        items.style.width = '100%';
-    }
-}
-//Actualizamos el total de Carrito
+// Actualiza el total del carrito
 function actualizarTotalCarrito() {
-    //seleccionamos el contenedor carrito
     let carritoContenedor = document.getElementsByClassName('carrito')[0];
     let carritoItems = carritoContenedor.getElementsByClassName('carrito-item');
     let total = 0;
-    //recorremos cada elemento del carrito para actualizar el total
     for (let i = 0; i < carritoItems.length; i++) {
         let item = carritoItems[i];
         let precioElemento = item.getElementsByClassName('carrito-item-precio')[0];
-        //quitamos el simobolo peso y el punto de milesimos.
-        let precio = parseFloat(precioElemento.innerText.replace('$', '').replace('.', ''));
-        let cantidadItem = item.getElementsByClassName('carrito-item-cantidad')[0];
-        console.log(precio);
-        let cantidad = cantidadItem.value;
+        // Quitamos el símbolo peso, el punto de miles y sufijos como "/u"
+        let precioTexto = precioElemento.innerText.replace('$', '').replace(/\./g, '').replace(/\/u.*/i, '').trim();
+        let precio = parseFloat(precioTexto) || 0;
+        let cantidad = parseInt(item.getElementsByClassName('carrito-item-cantidad')[0].value) || 1;
         total = total + (precio * cantidad);
-        // Obtener el atributo data-es-servicio como string y luego convertirlo a booleano.
-        let esServicio = item.getAttribute('data-es-servicio') === "true";
     }
     total = Math.round(total * 100) / 100;
-
     document.getElementsByClassName('carrito-precio-total')[0].innerText = '$' + total.toLocaleString("es") + ",00";
+}
 
+// Sincroniza el estado de los botones de producto según si están o no en el carrito
+function actualizarEstadoBotonesProductos() {
+    let itemsCarrito = document.getElementsByClassName('carrito-items')[0];
+    let titulosEnCarrito = [];
+    if (itemsCarrito) {
+        let elementos = itemsCarrito.getElementsByClassName('carrito-item-titulo');
+        for (let i = 0; i < elementos.length; i++) {
+            titulosEnCarrito.push(elementos[i].innerText.trim());
+        }
+    }
+
+    let botones = document.getElementsByClassName('boton-item');
+    for (let i = 0; i < botones.length; i++) {
+        let boton = botones[i];
+        let tarjeta = boton.closest('.item');
+        if (!tarjeta) continue;
+        let tituloEl = tarjeta.getElementsByClassName('titulo-item')[0];
+        if (!tituloEl) continue;
+        let titulo = tituloEl.innerText.trim();
+
+        if (titulosEnCarrito.includes(titulo)) {
+            boton.classList.add('boton-agregado');
+            boton.innerHTML = 'Agregado <i class="fa-solid fa-check"></i>';
+        } else {
+            boton.classList.remove('boton-agregado');
+            boton.innerHTML = 'Agregar al Carrito';
+        }
+    }
 }

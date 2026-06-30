@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/layout.css">
 </head>
 
 <body>
@@ -26,11 +27,10 @@
                     <li><a href="servicios.html">SERVICIOS</a></li>
                     <li><a href="nosotros.html">NOSOTROS</a></li>
                     <li><a href="contacto.html">CONTÁCTANOS</a></li>
-                    <li><a href="carrito.html" class="carro">
-                            <img src="navbar/CC.png"></a></li>
+                    <li><a href="carrito.html" class="carro"><img src="navbar/CC.png" alt="Carrito"></a></li>
                 </ul>
             </div>
-            <img src="navbar/588a64e0d06f6719692a2d10.png" alt="" class="menu-hamburger">
+            <i class="fa-solid fa-bars menu-hamburger"></i>
         </nav>
     </header>
 
@@ -124,50 +124,40 @@
     <!-- Pie de página -->
     <footer class="footer">
         <div class="footer-left col-md-4 col-sm-6">
-          <p class="about">
-            <span>Acerca</span> Nuestra plataforma de psicología ofrece apoyo emocional y mental con profesionales
-            capacitados. Accede a terapia en línea y experimenta los beneficios durante una prueba gratuita de 30 días,
-            promoviendo tu bienestar sin compromiso financiero.
-          </p>
-      
+            <p class="about">
+                <span>Acerca</span> Nuestra plataforma de psicología ofrece apoyo emocional y mental con profesionales
+                capacitados. Accede a terapia en línea y experimenta los beneficios durante una prueba gratuita de 30 días,
+                promoviendo tu bienestar sin compromiso financiero.
+            </p>
         </div>
-      
         <div class="footer-center col-md-4 col-sm-6">
-          <div>
-            <i class="fa fa-map-marker"></i>
-            <p>Bogota, Colombia</p>
-          </div>
-          <div>
-            <i class="fa fa-phone"></i>
-            <p> (+57) 0000 000 000</p>
-          </div>
-          <div>
-            <i class="fa fa-envelope"></i>
-            <p><a href="#">contacto&#64;serotonina.com</a></p>
-          </div>
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p>Bogota, Colombia</p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p> (+57) 0000 000 000</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="#">contacto&#64;serotonina.com</a></p>
+            </div>
         </div>
-      
         <div class="footer-right">
-          <h2 clas="titlefooter">Serotonina</h2>
-          <p class="menu">
-            <a href="index.html"> Inicio</a> |
-            <a href="servicios.html"> Servicios</a> |
-            <a href="nosotros.html"> Nosotros</a> |
-            <a href="contacto.html"> Contacto</a>
-          </p>
+            <h2 class="titlefooter">Serotonina</h2>
+            <p class="menu">
+                <a href="index.html"> Inicio</a> |
+                <a href="servicios.html"> Servicios</a> |
+                <a href="nosotros.html"> Nosotros</a> |
+                <a href="contacto.html"> Contacto</a>
+            </p>
         </div>
-      </footer>
+    </footer>
 
     <script src="js/registro-ingreso.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        const menuHamburger = document.querySelector(".menu-hamburger")
-        const navLinks = document.querySelector(".nav-links")
-
-        menuHamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('mobile-menu')
-        })
-    </script>
+    <script src="js/layout.js" defer></script>
 </body>
 
 </html>

@@ -1,15 +1,4 @@
-/* ---------------------- Colores y Fuentes -------------------- */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
-/*navbar */
-@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
-/*icono*/
-@import url("https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap");
-/* footer: font-family: 'Text Me One', sans-serif; */
-@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
-/* title body: font-family: 'Mochiy Pop P One', sans-serif;*/
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Titillium+Web:wght@200;300;400;600;700&display=swap');
-
+/* Montserrat se carga desde layout.css; no se necesitan más @import de fuentes */
 :root {
   --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
   --color-0: #049baed9;
@@ -29,100 +18,20 @@
 	--3-color: #efefef;
 	--font-navbar: "Montserrat", sans-serif;
 	--font-logo: "Montserrat";
-}
-
-/* ------------------------ Estilos del formulario -------------------------- */
-* {
+}* {
     margin: 0;
     padding: 0;
-    text-decoration: none !important;
     list-style: none;
-}
-
-header{
+}header{
 	height: 100%;
 	width: 100%;
 	margin: auto;
-}
-
-.navbar {
-    position: absolute;
-    margin: 1.4em;
-    margin-top: 4vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 93%;
-    box-sizing: border-box;
-    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 10px 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.navbar a {
-  color: #333;
-	font-size: medium;
-	font-weight: bold;
-	font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.navbar a:hover {
-	/*Efecto de raya bajo y sombreado por encima*/
-	color: #0e9a9f;
-}
-
-.navbar .logo {
-	font-size: 2em;
-	font-weight: bold;
-	margin-top: 0.1em;
-	margin-left: 2em;
-	color: #0e9a9f;
-}
-
-.navbar .nav-links ul {
-	display: flex;
-	margin-top: 1em;
-	align-items: center;
-}
-
-.navbar .nav-links ul li {
-    margin: 0 1.2em;
-}
-
-.nav-links ul li .carro {
-    width: auto !important;
-    height: auto !important;
-    margin: 1 35px;
-    text-decoration: none;
-    list-style: none;
-}
-
-.navbar .nav-links ul li .active a {
-    color: #0e9a9f;
-    font-weight: 600;
-}
-
-.navbar .menu-hamburger {
-	display: none;
-	position: absolute;
-	right: 50px;
-	width: 50px;
-	padding: 1em;
-	cursor: pointer;
-}
-
-body {
+}body {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
   margin: 0;
   padding: 0;
-}
-
-/* Estilos personalizados para el contenedor izquierdo dentro de contactM */
-.leftContainer {
+}.leftContainer {
   flex: 1;
   display: flex;
   align-items:center;
@@ -134,18 +43,14 @@ body {
   border-radius: 0;
   height: auto;
   min-height: 500px;
-}
-
-.leftContainer .imgleftcontainer{
+}.leftContainer .imgleftcontainer{
   max-width: 300px;
   width: 100%;
   border-radius: 15px;
   margin-top: 30px;
   object-fit: cover;
   height: auto;
-}
-
-.contactMain{
+}.contactMain{
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
@@ -160,13 +65,10 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   overflow: hidden;
-}
-.divcontactform{
+}.divcontactform{
   margin: 120px auto 60px auto;
   padding: 0 20px;
-}
-
-.textdivleftcontainer {
+}.textdivleftcontainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,32 +76,23 @@ body {
   text-align: center;
   width: 100%;
   max-width: 400px;
-}
-
-.leftContainer .textdivleftcontainer h1 {
+}.leftContainer .textdivleftcontainer h1 {
   font-size: 36px;
   margin-bottom: 30px;
   color: #0e9a9f;
   font-weight: 700;
-}
-
-.leftContainer .textdivleftcontainer h5 {
+}.leftContainer .textdivleftcontainer h5 {
   font-size: 16px;
   margin-bottom: 20px;
   color: #333;
   font-weight: 500;
   line-height: 1.6;
-}
-
-.leftContainer .textdivleftcontainer h6 {
+}.leftContainer .textdivleftcontainer h6 {
   font-size: 14px;
   color: #666;
   font-weight: 500;
   margin-top: 20px;
-}
-
-/* Estilos para el fondo semitransparente del contenedor del formulario */
-#rightContainer {
+}#rightContainer {
   flex: 1;
   padding: 40px;
   background: rgba(255, 255, 255, 0.1);
@@ -211,10 +104,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-/* Estilos para el formulario */
-#contactForm {
+}#contactForm {
   width: 100%;
   max-width: 400px;
   display: flex;
@@ -223,10 +113,7 @@ body {
   justify-content: center;
   text-align: center;
   margin: 0;
-}
-
-
-.form-group {
+}.form-group {
   margin: 15px 0;
   display: flex;
   justify-content: flex-start;
@@ -234,17 +121,13 @@ body {
   flex-direction: column;
   font-family: var(--font-navbar);
   width: 100%;
-}
-
-.form-group label {
+}.form-group label {
   margin-bottom: 8px;
   font-weight: 600;
   color: #333;
   font-size: 14px;
   align-self: flex-start;
-}
-
-.form-control {
+}.form-control {
   width: 100%;
   height: 45px;
   padding: 12px 15px;
@@ -255,20 +138,14 @@ body {
   font-size: 14px;
   font-weight: 500;
   transition: all 0.3s ease;
-}
-
-.form-control:focus {
+}.form-control:focus {
   outline: none;
   border-color: #0e9a9f;
   box-shadow: 0 0 0 3px rgba(14, 154, 159, 0.1);
-}
-
-.button-container {
+}.button-container {
   display: flex;
   justify-content: center;
-}
-
-#message {
+}#message {
   width: 100%;
   height: 120px;
   max-width: 100%;
@@ -282,184 +159,14 @@ body {
   font-weight: 500;
   resize: vertical;
   transition: all 0.3s ease;
-}
-
-#message:focus {
+}#message:focus {
   outline: none;
   border-color: #0e9a9f;
   box-shadow: 0 0 0 3px rgba(14, 154, 159, 0.1);
-}
-
-/*---------Footer----------*/
-/*---------Footer----------*/
-.footer {
-	background-color: #0e9a9f;
-	width: 100%;
-	text-align: left;
-	font-family: sans-serif;
-	font-weight: bold;
-	font-size: 16px;
-	padding: 50px;
-	margin-top: 20px;
-	display: flex;
-	border-radius: 40px 40px 0px 0px;
-	box-shadow: 0px 0px 40px rgba(198, 139, 128, 0.2);
-}
-
-.footer .footer-left,
-.footer .footer-center,
-.footer .footer-right {
-	display: inline-block;
-	vertical-align: top;
-	font-family: sans-serif;
-}
-
-/* footer izq*/
-.footer .footer-left {
-	width: 33%;
-	padding-right: 25px;
-}
-
-.footer .about {
-	line-height: 20px;
-	color: #f8f8f7;
-	font-size: 19px;
-	font-weight: 700;
-	margin: auto;
-	font-family: var(--font-navbar);
-	text-wrap: balance;
-	text-align: center;
-}
-
-.footer .about span {
-	/*titulo acerca */
-	display: block;
-	color: #f3f2f2;
-	font-size: 30px;
-	margin-bottom: 20px;
-	text-align: center;
-}
-
-.menu a {
+}.menu a {
 	display: flex;
 	align-items: center;
-}
-
-.footer .icons {
-	margin-top: 25px;
-	display: flex;
-	justify-content: center;
-}
-
-.footer .icons a {
-	/* iconos redes */
-	display: inline-block;
-	width: 45px;
-	height: 40px;
-	cursor: pointer;
-	background-color: #0e9a9f;
-	border-radius: 2px;
-	font-size: 25px;
-	color: #fffaf9;
-	text-align: center;
-	line-height: 35px;
-	margin-right: 3px;
-	margin-bottom: 5px;
-}
-
-.footer .footer-center {
-	width: 30%;
-	padding-left: 50px;
-}
-
-.footer .footer-center i {
-	/* iconos direccion, ubicacion */
-	background-color: #f8f7f6;
-	color: #0bc1b4;
-	font-size: 25px;
-	width: 38px;
-	height: 38px;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 42px;
-	margin: 10px 15px;
-	vertical-align: middle;
-}
-
-.footer .footer-center i.fa-envelope {
-	font-size: 17px;
-	line-height: 38px;
-}
-
-.footer .footer-center p {
-	/*direccion numero*/
-	display: inline-block;
-	font-family: var(--font-navbar);
-	color: #f8f4f1;
-	vertical-align: middle;
-	margin: 0;
-	letter-spacing: 2 px;
-}
-
-.footer .footer-center p span {
-	display: block;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 2;
-}
-
-.footer .footer-center p a {
-	/*contacto*/
-	color: #e7e3e0;
-	text-decoration: none;
-	font-family: var(--font-navbar);
-}
-
-/* footer der*/
-.footer .footer-right {
-	width: 35%;
-}
-
-.footer-right h2 {
-	color: #f6f4f3;
-	font-size: 36px;
-	font-weight: bolder;
-	margin: 0;
-	font-family: var(--font-navbar);
-	text-align: center;
-}
-
-.footer-right .titlefooter {
-	color: var(--2-color);
-	font-weight: bolder;
-	font-size: 40px;
-}
-
-.footer .menu {
-	/* nombre logo footer*/
-	color: #f7f2ef;
-	font-family: var(--font-navbar);
-	margin: 20px 0 12px;
-	padding: 0;
-	font-size: 25px;
-	text-align: center;
-}
-
-.footer .menu a {
-	display: inline-block;
-	line-height: 1;
-	text-decoration: none;
-	color: inherit;
-}
-
-.footer .menu a:hover {
-	color: #fef8f7;
-}
-
-
-
-/* Estilos para el botón Enviar */
-#submitButton {
+}#submitButton {
   background: linear-gradient(135deg, #0e9a9f 0%, #07c2b2 100%);
   color: #fff;
   font-weight: 600;
@@ -470,15 +177,11 @@ body {
   font-size: 16px;
   transition: all 0.3s ease;
   box-shadow: 0 5px 15px rgba(14, 154, 159, 0.3);
-}
-
-#submitButton:hover {
+}#submitButton:hover {
   background: linear-gradient(135deg, #0a7a7a 0%, #0a9a8a 100%);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(14, 154, 159, 0.4);
-}
-
-@media screen and (max-width: 768px) {
+}@media screen and (max-width: 768px) {
   .contactMain {
     flex-direction: column;
     gap: 0;
@@ -500,148 +203,3 @@ body {
     padding: 0 10px;
   }
 }
-
-
-@media (max-width: 879px) {
-  .footer-left {
-		width: 80%;
-	}
-
-	.footer-right .menu {
-		font-size: 18px;
-	}
-
-	.footer .footer-center {
-		display: flex;
-		flex-direction: row;
-		font-size: 10px;
-		justify-content: center;
-		width: 400px;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column-reverse;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.footer .footer-right {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.footer-right .menu {
-		width: 500px;
-		flex-wrap: nowrap;
-		align-items: center;
-	}
-
-	.footer .footer-center {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 400px;
-		flex-direction: row;
-		flex-wrap: nowrap;
-		font-size: 9px;
-		padding-left: 0px;
-		margin: 5px 10px;
-	}
-
-	.footer .footer-center div {
-		justify-content: center;
-		align-items: center;
-		width: calc(90% / 3);
-		display: flex;
-		flex-direction: column;
-	}
-
-	.footer .footer-left {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 500px;
-		margin-top: 40px;
-		padding-right: 0px;
-	}
-
-	.footer-left p {
-		display: flex;
-		align-items: center;
-	}
-
-	.footer .footer-left .about {
-		display: flex;
-		flex-direction: column;
-		margin: auto;
-		justify-content: center;
-		width: 350px;
-		font-size: 17px;
-	}
-}
-
-@media (min-width: 1050px) and (max-width: 1229px) {
-  footer {
-		display: flex;
-		flex-direction: column-reverse;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.footer .footer-right {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.footer-right .menu {
-		width: 500px;
-		flex-wrap: nowrap;
-		align-items: center;
-	}
-
-	.footer .footer-center {
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-		width: 720px;
-
-		flex-direction: row;
-		flex-wrap: nowrap;
-	}
-
-	.footer .footer-center div {
-		justify-content: center;
-		align-items: center;
-		width: 500px;
-		display: flex;
-		flex-direction: column;
-		margin: 10px 20px;
-		padding-left: 0px;
-	}
-
-	.footer .footer-left {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 500px;
-		margin-top: 40px;
-		padding-right: 0px;
-	}
-
-	.footer-left p {
-		display: flex;
-		align-items: center;
-	}
-
-	.footer .footer-left .about {
-		display: flex;
-		flex-direction: column;
-
-		margin: auto;
-		justify-content: center;
-	}
-}
-

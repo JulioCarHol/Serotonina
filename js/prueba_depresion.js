@@ -16,14 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
     if (question1 && question2 && question3 && question4 && question5 && question6 && question7 && question8) {
       let score = parseInt(question1.value) + parseInt(question2.value) + parseInt(question3.value) + parseInt(question4.value) + parseInt(question5.value) + parseInt(question6.value) + parseInt(question7.value) + parseInt(question8.value);
 
-      // Función para obtener el nivel de ansiedad y descripción correspondiente según la puntuación
-      function getAnxietyLevel(score) {
+      // Función para obtener el nivel de depresión y descripción correspondiente según la puntuación
+      function getDepressionLevel(score) {
         let scale = [
-          { score: 8, level: 'Muy bajo', description: 'Tus niveles de ansiedad son muy bajos. Es posible que no experimentes una gran cantidad de ansiedad en tu vida cotidiana.', recommendation: 'Continúa manteniendo hábitos saludables para el bienestar emocional y busca actividades que te ayuden a manejar el estrés.' },
-          { score: 16, level: 'Bajo', description: 'Tus niveles de ansiedad son bajos. Experimentas algo de ansiedad, pero no de manera significativa.', recommendation: 'Sigue practicando técnicas de relajación y mindfulness para mantener tu bienestar emocional.' },
-          { score: 24, level: 'Moderado', description: 'Tus niveles de ansiedad son moderados. Experimentas una cantidad promedio de ansiedad en situaciones estresantes.', recommendation: 'Considera hablar con un profesional de la salud mental para obtener apoyo adicional y aprender estrategias de manejo de la ansiedad.' },
-          { score: 32, level: 'Alto', description: 'Tus niveles de ansiedad son altos. Experimentas una cantidad significativa de ansiedad en varias áreas de tu vida.', recommendation: 'Es recomendable buscar la ayuda de un profesional de la salud mental para obtener un diagnóstico y un plan de tratamiento adecuados.' },
-          { score: 40, level: 'Muy alto', description: 'Tus niveles de ansiedad son muy altos. La ansiedad puede estar teniendo un impacto significativo en tu bienestar y funcionamiento diario.', recommendation: 'Te recomendamos buscar ayuda profesional lo antes posible. Un terapeuta especializado en salud mental puede ayudarte a desarrollar estrategias de manejo de la ansiedad y mejorar tu calidad de vida.' }
+          { score: 8, level: 'Minimalista', description: 'Tus niveles de depresión son muy bajos. Es posible que no experimentes síntomas depresivos significativos en tu vida cotidiana.', recommendation: 'Continúa manteniendo hábitos saludables para el bienestar emocional y busca actividades que te aporten sentido y satisfacción.' },
+          { score: 16, level: 'Leve', description: 'Tus niveles de depresión son bajos. Puedes experimentar algunos síntomas depresivos de forma ocasional, pero no interfieren significativamente con tu funcionamiento.', recommendation: 'Sigue practicando el autocuidado: actividad física, descanso adecuado y conexión con seres queridos. Si te sientes abrumado/a, considera hablar con un profesional.' },
+          { score: 24, level: 'Moderado', description: 'Tus niveles de depresión son moderados. Experimentas una cantidad significativa de síntomas depresivos que pueden afectar tu estado de ánimo y tu vida diaria.', recommendation: 'Es recomendable hablar con un profesional de la salud mental para obtener apoyo adicional y aprender estrategias de manejo del estado anímico.' },
+          { score: 32, level: 'Alto', description: 'Tus niveles de depresión son altos. Los síntomas depresivos parecen estar presentes de manera significativa y pueden estar afectando tu funcionamiento diario.', recommendation: 'Te recomendamos buscar la ayuda de un profesional de la salud mental para obtener un diagnóstico y un plan de tratamiento adecuados.' },
+          { score: 40, level: 'Muy alto', description: 'Tus niveles de depresión son muy altos. La depresión puede estar teniendo un impacto significativo en tu bienestar y funcionamiento diario.', recommendation: 'Te recomendamos buscar ayuda profesional lo antes posible. Un terapeuta o psiquiatra puede ayudarte a desarrollar estrategias de manejo y mejorar tu calidad de vida.' }
         ];
 
         for (let i = 0; i < scale.length; i++) {
@@ -31,17 +31,19 @@ document.addEventListener('DOMContentLoaded', function () {
             return scale[i];
           }
         }
+        return scale[scale.length - 1];
       }
 
-      let anxietyLevel = getAnxietyLevel(score);
+      let depressionLevel = getDepressionLevel(score);
 
       // Muestra los resultados en el documento HTML
       let resultsSection = document.getElementById('results');
-      resultsSection.innerHTML = '<h3>Resultados de la prueba:</h3>' +
-        '<p>Tu puntuación de ansiedad es: ' + score + '</p>' +
-        '<p>Nivel de ansiedad: ' + anxietyLevel.level + '</p>' +
-        '<p>' + anxietyLevel.description + '</p>' +
-        '<p>' + anxietyLevel.recommendation + '</p>';
+      resultsSection.innerHTML =
+        '<h3>Resultados de la prueba</h3>' +
+        '<p class="score">Puntuación: <strong>' + score + '</strong></p>' +
+        '<p class="level">' + depressionLevel.level + '</p>' +
+        '<p class="description">' + depressionLevel.description + '</p>' +
+        '<p class="recommendation">' + depressionLevel.recommendation + '</p>';
 
       // Restablece las respuestas seleccionadas
       document.querySelector('form').reset();

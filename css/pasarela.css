@@ -1,252 +1,276 @@
-/*Tarjeta*/
+/* ============================================================
+   pasarela.css — Formulario de pago (modernizado)
+   Antes usaba "Jandi" y colores hardcoded. Ahora usa Montserrat
+   y la paleta --c-* consistente con el resto del sitio.
+   ============================================================ */
+
+/* ---------------------- Billing ---------------------- */
 .billing {
-    margin-top: 36px;
-    padding: 0 10px;
+  margin-top: 24px;
+  padding: 0 4px;
 }
-
 .billing-headline {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
+/* ---------------------- Botón checkout ---------------------- */
 .buttonCheckout {
-    background: var(--color-0);
-    border: none;
-    bottom: 0;
-    color: #fff;
-    font: 700 18px "Jaldi", sans-serif;
-    height: 60px;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    outline: 0;
-    width: 100%;
+  background: linear-gradient(135deg, var(--c-teal, #0e9a9f), var(--c-teal-light, #1ec9bd));
+  border: none;
+  bottom: 0;
+  color: #fff;
+  font: 700 16px "Montserrat", system-ui, sans-serif;
+  height: 56px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-radius: 12px;
+  outline: 0;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(14, 154, 159, 0.3);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
-
-.buttonCheckout-web {
-    position: absolute;
+.buttonCheckout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(14, 154, 159, 0.4);
 }
-
-@media (max-width: 639px) {
-    .buttonCheckout-web {
-        display: none;
-    }
-}
-
-.buttonCheckout-mobile {
-    position: sticky;
-}
-
-@media (min-width: 640px) {
-    .buttonCheckout-mobile {
-        display: none;
-    }
-}
-
 .buttonCheckout:active {
-    background: #00b94d;
+  transform: translateY(0);
+}
+.buttonCheckout-web {
+  position: absolute;
+}
+@media (max-width: 639px) {
+  .buttonCheckout-web { display: none; }
+}
+.buttonCheckout-mobile {
+  position: sticky;
+}
+@media (min-width: 640px) {
+  .buttonCheckout-mobile { display: none; }
 }
 
+/* ---------------------- Checkbox ---------------------- */
 .checkboxGroup input[type=checkbox] {
-    position: absolute;
-    visibility: hidden;
+  position: absolute;
+  visibility: hidden;
+}
+.checkboxGroup > label {
+  cursor: pointer;
+  color: var(--c-ink, #0f3c4c);
+  font-size: 14px;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 500;
+}
+.checkboxGroup > input[type=checkbox]:checked ~ label::before {
+  background: var(--c-teal, #0e9a9f) url(//my-assets.netlify.com/codepen/dailyui-002/ico_checkmark.svg) center center/16px 13px no-repeat;
+  box-sizing: border-box;
+  content: "";
+  display: inline-block;
+  height: 20px;
+  margin-right: 10px;
+  top: 7px;
+  transition: 150ms ease-out;
+  position: relative;
+  width: 20px;
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
+.checkboxGroup > input[type=checkbox]:not(:checked) ~ label::before {
+  background: #fff center center/16px 13px no-repeat;
+  border: 2px solid rgba(14, 154, 159, 0.25);
+  box-sizing: border-box;
+  content: "";
+  display: inline-block;
+  height: 20px;
+  margin-right: 10px;
+  top: 7px;
+  transition: 150ms ease-out;
+  position: relative;
+  width: 20px;
+  border-radius: 5px;
 }
 
-.checkboxGroup>label {
-    cursor: pointer;
-    color: black;
-    font-size: 15px;
-}
-
-.checkboxGroup>input[type=checkbox]:checked~label::before {
-    background: var(--color-0) url(//my-assets.netlify.com/codepen/dailyui-002/ico_checkmark.svg) center center/16px 13px no-repeat;
-    box-sizing: border-box;
-    content: "";
-    display: inline-block;
-    height: 18px;
-    margin-right: 10px;
-    top: 7px;
-    transition: 150ms ease-out;
-    position: relative;
-    width: 18px;
-    margin-bottom: 2px;
-}
-
-.checkboxGroup>input[type=checkbox]:not(:checked)~label::before {
-    background: #fff center center/16px 13px no-repeat;
-    border: 2px solid #cfd8dc;
-    box-sizing: border-box;
-    content: "";
-    display: inline-block;
-    height: 25px;
-    margin-right: 10px;
-    top: 7px;
-    transition: 150ms ease-out;
-    position: relative;
-    width: 25px;
-}
-
+/* ---------------------- Contenedor de pago ---------------------- */
 .screenPayment {
-    padding-bottom: 100px;
-    background-color: var(--color-5);
+  padding-bottom: 0;
+  background-color: transparent;
 }
 
+/* ---------------------- Tipografías ---------------------- */
 .type-S {
-    color: #263238;
-    font: 700 13.5338345865px/100% "Jaldi", sans-serif;
+  color: var(--c-ink, #0f3c4c);
+  font: 600 13px/100% "Montserrat", system-ui, sans-serif;
 }
-
 .type-L {
-    color: #0f3c4c;
-    font: 700 23.94px/100% "Jaldi", sans-serif;
-    text-align: left;
-    font-size: 22px;
+  color: var(--c-ink, #0f3c4c);
+  font: 700 18px/120% "Montserrat", system-ui, sans-serif;
+  text-align: left;
 }
-
 .type-XL {
-    color: #263238;
-    font: 700 31.8402px/100% "Jaldi", sans-serif;
+  color: var(--c-ink, #0f3c4c);
+  font: 700 24px/100% "Montserrat", system-ui, sans-serif;
 }
 
 ul {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
+/* ---------------------- Acordeón de métodos de pago ---------------------- */
 .payment {
-    margin-top: 36px;
-    padding: 0 10px;
-}
-
-.payment-cardimg {
-    height: 23px;
-    position: absolute;
-    right: 19px;
-    top: 16px;
-    width: 96px;
+  margin-top: 16px;
+  padding: 0 4px;
 }
 
 .payment-headline {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .payment-radioGroup {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+}
+.payment-radioGroup > input {
+  position: absolute;
+  visibility: hidden;
+  font-size: 16px;
+}
+.payment-radioGroup > input:checked ~ label::before {
+  border: 6px solid var(--c-teal, #0e9a9f);
+}
+.payment-radioGroup > input:checked ~ label {
+  font-weight: 700;
+  color: var(--c-teal, #0e9a9f);
+}
+.payment-radioGroup > label {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  top: -2px;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--c-ink, #0f3c4c);
+}
+.payment-radioGroup > label::before {
+  transition: 100ms ease-out;
+  box-sizing: border-box;
+  background: #fff;
+  border: 2px solid rgba(14, 154, 159, 0.25);
+  border-radius: 100%;
+  content: "";
+  display: inline-block;
+  height: 20px;
+  margin-right: 10px;
+  position: relative;
+  top: 5px;
+  width: 20px;
 }
 
-.payment-radioGroup>input {
-    position: absolute;
-    visibility: hidden;
-    font-size: 25px;
-
-}
-
-.payment-radioGroup>input:checked~label::before {
-    border: 7px solid var(--color-0);
-}
-
-.payment-radioGroup>input:checked~label {
-    font-size: 25px;
-}
-
-.payment-radioGroup>label {
-    cursor: pointer;
-    display: block;
-    position: relative;
-    top: -2px;
-}
-
-.payment-radioGroup>label::before {
-    transition: 100ms ease-out;
-    box-sizing: border-box;
-    background: #fff;
-    border: 2px solid #cfd8dc;
-    border-radius: 100%;
-    content: "";
-    display: inline-block;
-    height: 22px;
-    margin-right: 10px;
-    position: relative;
-    top: 6px;
-    width: 22px;
-}
-
+/* ---------------------- Pestañas del acordeón ---------------------- */
 .payment-tab {
-    background: #eceff1;
-    border: 2px solid #eceff1;
-    box-sizing: border-box;
-    height: 60px;
-    overflow: hidden;
-    padding: 13px 20px;
-    position: relative;
-    transition: 150ms ease-out;
-    width: 100%;
+  background: rgba(211, 234, 242, 0.4);
+  border: 1px solid rgba(14, 154, 159, 0.12);
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 14px 18px;
+  position: relative;
+  transition: background 150ms ease-out, border-color 150ms ease-out;
+  width: 100%;
+  border-radius: 0;
 }
-
 .payment-tab:first-of-type {
-    border-radius: 5px 5px 0 0;
+  border-radius: 12px 12px 0 0;
 }
-
 .payment-tab:last-of-type {
-    border-radius: 0 0 5px 5px;
+  border-radius: 0 0 12px 12px;
 }
-
 .payment-tab-isActive {
-    background: #ffffff;
+  background: #ffffff;
+  border-color: rgba(14, 154, 159, 0.3);
 }
 
-.payment-tab-isActive:nth-of-type(1) {
-    height: 140px;
+/* El contenido (inputs / texto PSE) se muestra solo si la pestaña está activa.
+   El radio del header siempre es visible; el panel se abre/cierra con max-height. */
+.payment-tab-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 250ms ease, opacity 200ms ease, margin-top 200ms ease;
+  margin-top: 0;
 }
-
-.payment-tab-isActive:nth-of-type(2) {
-    height: 307px;
+.payment-tab-isActive .payment-tab-content {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 10px;
 }
 
 .payment-tab .textpse {
-    color: black;
-    font-size: 15px;
-    text-align: center;
+  color: var(--c-ink, #0f3c4c);
+  font-size: 13px;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 400;
+  text-align: center;
+  opacity: 0.7;
 }
-
 .payment-tab .textpseimg {
-    width: 170px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin: auto;
+  width: 150px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 8px auto 0;
 }
 
-.textInputGroup>input {
-    border: 2px solid #cfd8dc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    display: block;
-    font: 400 18px "Jaldi", sans-serif;
-    height: 50px;
-    margin: -15px auto 5px;
-    padding: 5px 10px 0 11px;
-    transition: 100ms ease-out;
-    width: 100%;
+/* ---------------------- Inputs de tarjeta ---------------------- */
+.textInputGroup {
+  font-family: "Montserrat", system-ui, sans-serif;
 }
-
-.textInputGroup>input:focus {
-    border: 2px solid var(--color-0);
-    outline: 0;
+.textInputGroup > input {
+  border: 1.5px solid rgba(14, 154, 159, 0.2);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: block;
+  font: 400 15px "Montserrat", system-ui, sans-serif;
+  color: var(--c-ink, #0f3c4c);
+  height: 46px;
+  margin: 4px 0 12px;
+  padding: 0 14px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
 }
-
-.textInputGroup>label {
-    background: #ffffff;
-    display: inline-block;
-    font: 700 18px "Jaldi", sans-serif;
-    margin: 5px auto auto 8px;
-    padding: 0px 5px;
+.textInputGroup > input:focus {
+  border-color: var(--c-teal, #0e9a9f);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(14, 154, 159, 0.12);
 }
-
+.textInputGroup > input::placeholder {
+  color: var(--c-ink, #0f3c4c);
+  opacity: 0.4;
+}
+.textInputGroup > label {
+  background: transparent;
+  display: block;
+  font: 600 12px "Montserrat", system-ui, sans-serif;
+  color: var(--c-ink, #0f3c4c);
+  opacity: 0.7;
+  margin: 0 0 2px 2px;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
 .textInputGroup-halfWidth {
-    float: left;
-    width: 48%;
+  float: left;
+  width: 48%;
+}
+.textInputGroup-halfWidthRight {
+  float: right;
+  width: 48%;
 }
 
-.textInputGroup-halfWidthRight {
-    float: right;
-    width: 48%;
+/* clearfix para los floats de half-width inputs */
+.payment-tab-content::after {
+  content: "";
+  display: table;
+  clear: both;
 }
